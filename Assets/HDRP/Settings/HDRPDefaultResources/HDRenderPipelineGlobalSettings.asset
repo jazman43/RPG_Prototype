@@ -63,7 +63,8 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderPipelineResources: {fileID: 11400000, guid: 3ce144cff5783da45aa5d4fdc2da14b7,
     type: 2}
-  m_RenderPipelineRayTracingResources: {fileID: 0}
+  m_RenderPipelineRayTracingResources: {fileID: 11400000, guid: ba6e7f30e5cffc249a8bf7ee5756c196,
+    type: 2}
   beforeTransparentCustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
   afterPostProcessBlursCustomPostProcesses: []
@@ -103,10 +104,14 @@ MonoBehaviour:
       hasProbeVolumes: 0
     - sceneGUID: 23d8661265deed742959416ea58475f7
       hasProbeVolumes: 0
+    - sceneGUID: 2bea9edb0b9f0a84e9646c8cc09017d6
+      hasProbeVolumes: 0
     serializedProfiles:
     - sceneGUID: 8124e5870f4fd4c779e7a5f994e84ad1
       profile: {fileID: 11400000, guid: b4023e4bec523c944b9cb2f710cec6f8, type: 2}
     - sceneGUID: 23d8661265deed742959416ea58475f7
+      profile: {fileID: 11400000, guid: b4023e4bec523c944b9cb2f710cec6f8, type: 2}
+    - sceneGUID: 2bea9edb0b9f0a84e9646c8cc09017d6
       profile: {fileID: 11400000, guid: b4023e4bec523c944b9cb2f710cec6f8, type: 2}
     serializedBakeSettings:
     - sceneGUID: 8124e5870f4fd4c779e7a5f994e84ad1
@@ -145,11 +150,30 @@ MonoBehaviour:
           collisionMask:
             serializedVersion: 2
             m_Bits: 4294967291
+    - sceneGUID: 2bea9edb0b9f0a84e9646c8cc09017d6
+      settings:
+        m_Version: 1
+        dilationSettings:
+          enableDilation: 1
+          dilationDistance: 1
+          dilationValidityThreshold: 0.25
+          dilationIterations: 1
+          squaredDistWeighting: 1
+        virtualOffsetSettings:
+          useVirtualOffset: 1
+          outOfGeoOffset: 0.01
+          searchMultiplier: 0.2
+          rayOriginBias: -0.001
+          maxHitsPerRay: 10
+          collisionMask:
+            serializedVersion: 2
+            m_Bits: 4294967291
     serializedBakingSets:
     - name: Default
       sceneGUIDs:
       - 8124e5870f4fd4c779e7a5f994e84ad1
       - 23d8661265deed742959416ea58475f7
+      - 2bea9edb0b9f0a84e9646c8cc09017d6
       settings:
         m_Version: 1
         dilationSettings:

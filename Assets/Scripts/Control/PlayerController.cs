@@ -14,7 +14,7 @@ namespace RPG.Control
     {
 
         [Header("Animation")]
-        [SerializeField] private string animSpeed = "Speed";
+        [SerializeField] private string animSpeed = "forwardSpeed";
         Animator animator;
 
         MyInputs myPlayerInputs;
