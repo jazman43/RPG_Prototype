@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestEnvioment/OutdoorsScene.unity
+    path: Assets/Scenes/Main Menu/Main Menu.unity
+    guid: 2bea9edb0b9f0a84e9646c8cc09017d6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Island/Tutorial Island.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
+  - enabled: 1
+    path: Assets/Scenes/MainLand/MainLand.unity
+    guid: 4b5bc8ff15fcff4459a60ac81ee4bc8b
   m_configObjects: {}

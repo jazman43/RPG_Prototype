@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 6087579739341869889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6087579739341869889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
@@ -96,6 +96,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2272482213439706422, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
     - {fileID: 8485177727738780499, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
+    - {fileID: 1119897057602796889, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -111,10 +112,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3796362852273523740}
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1670369116678427940}
   m_SourcePrefab: {fileID: 100100000, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
 --- !u!1 &3392578257536452417 stripped
 GameObject:
@@ -181,17 +178,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   deathAnimation: die
---- !u!114 &1670369116678427940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3392578257536452417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89359a1190b632d47b235f7c34b1ae5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 4
-  animSpeed: Speed

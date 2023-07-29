@@ -55,6 +55,24 @@ namespace RPG.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TEST_SAVE"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab0c9073-896c-4532-a509-a1ac50e75af8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TEST_LOAD"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2423226-377b-4a22-b86e-3e79e11cfd1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -145,6 +163,28 @@ namespace RPG.Inputs
                     ""action"": ""mousePos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce6659db-6b4c-40b7-9f32-5168e04e03b1"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""TEST_SAVE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0803815b-50b4-4459-b737-8957bac6f403"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""TEST_LOAD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,6 +224,8 @@ namespace RPG.Inputs
             m_PlayerActions_Move = m_PlayerActions.FindAction("Move", throwIfNotFound: true);
             m_PlayerActions_moveCam = m_PlayerActions.FindAction("moveCam", throwIfNotFound: true);
             m_PlayerActions_mousePos = m_PlayerActions.FindAction("mousePos", throwIfNotFound: true);
+            m_PlayerActions_TEST_SAVE = m_PlayerActions.FindAction("TEST_SAVE", throwIfNotFound: true);
+            m_PlayerActions_TEST_LOAD = m_PlayerActions.FindAction("TEST_LOAD", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -248,6 +290,8 @@ namespace RPG.Inputs
         private readonly InputAction m_PlayerActions_Move;
         private readonly InputAction m_PlayerActions_moveCam;
         private readonly InputAction m_PlayerActions_mousePos;
+        private readonly InputAction m_PlayerActions_TEST_SAVE;
+        private readonly InputAction m_PlayerActions_TEST_LOAD;
         public struct PlayerActionsActions
         {
             private @MyInputs m_Wrapper;
@@ -255,6 +299,8 @@ namespace RPG.Inputs
             public InputAction @Move => m_Wrapper.m_PlayerActions_Move;
             public InputAction @moveCam => m_Wrapper.m_PlayerActions_moveCam;
             public InputAction @mousePos => m_Wrapper.m_PlayerActions_mousePos;
+            public InputAction @TEST_SAVE => m_Wrapper.m_PlayerActions_TEST_SAVE;
+            public InputAction @TEST_LOAD => m_Wrapper.m_PlayerActions_TEST_LOAD;
             public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -273,6 +319,12 @@ namespace RPG.Inputs
                 @mousePos.started += instance.OnMousePos;
                 @mousePos.performed += instance.OnMousePos;
                 @mousePos.canceled += instance.OnMousePos;
+                @TEST_SAVE.started += instance.OnTEST_SAVE;
+                @TEST_SAVE.performed += instance.OnTEST_SAVE;
+                @TEST_SAVE.canceled += instance.OnTEST_SAVE;
+                @TEST_LOAD.started += instance.OnTEST_LOAD;
+                @TEST_LOAD.performed += instance.OnTEST_LOAD;
+                @TEST_LOAD.canceled += instance.OnTEST_LOAD;
             }
 
             private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -286,6 +338,12 @@ namespace RPG.Inputs
                 @mousePos.started -= instance.OnMousePos;
                 @mousePos.performed -= instance.OnMousePos;
                 @mousePos.canceled -= instance.OnMousePos;
+                @TEST_SAVE.started -= instance.OnTEST_SAVE;
+                @TEST_SAVE.performed -= instance.OnTEST_SAVE;
+                @TEST_SAVE.canceled -= instance.OnTEST_SAVE;
+                @TEST_LOAD.started -= instance.OnTEST_LOAD;
+                @TEST_LOAD.performed -= instance.OnTEST_LOAD;
+                @TEST_LOAD.canceled -= instance.OnTEST_LOAD;
             }
 
             public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -326,6 +384,8 @@ namespace RPG.Inputs
             void OnMove(InputAction.CallbackContext context);
             void OnMoveCam(InputAction.CallbackContext context);
             void OnMousePos(InputAction.CallbackContext context);
+            void OnTEST_SAVE(InputAction.CallbackContext context);
+            void OnTEST_LOAD(InputAction.CallbackContext context);
         }
     }
 }

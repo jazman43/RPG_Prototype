@@ -89,10 +89,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1879413748936254907}
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7799001137983902742}
     - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
@@ -106,10 +102,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8884919011634674664}
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2388634494860324132}
   m_SourcePrefab: {fileID: 100100000, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
 --- !u!1 &7391317488354557367 stripped
 GameObject:
@@ -117,20 +109,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5606224787700250136}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1879413748936254907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391317488354557367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89359a1190b632d47b235f7c34b1ae5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 4
-  animSpeed: Speed
 --- !u!195 &7799001137983902742
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -202,21 +180,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2388634494860324132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391317488354557367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f495bdccc246845a0a1ed44d2ef8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 5
-  supicionTime: 6
-  patrolPath: {fileID: 0}
-  wayPointTolerance: 1
-  wayPointWait: 6
-  patrolSpeedFraction: 0.2

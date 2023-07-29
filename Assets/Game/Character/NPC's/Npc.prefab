@@ -99,15 +99,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 631816134568091139}
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 180807751555689381}
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1260825160747598953}
   m_SourcePrefab: {fileID: 100100000, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
 --- !u!1 &5629532289570433463 stripped
 GameObject:
@@ -115,21 +107,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7313404272097518104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &631816134568091139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5629532289570433463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89359a1190b632d47b235f7c34b1ae5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  maxSpeed: 4
-  animSpeed: Speed
 --- !u!195 &180807751555689381
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -152,21 +129,3 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1260825160747598953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5629532289570433463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f495bdccc246845a0a1ed44d2ef8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 0
-  supicionTime: 0
-  patrolPath: {fileID: 0}
-  wayPointTolerance: 1
-  wayPointWait: 0.2
-  patrolSpeedFraction: 0.2
