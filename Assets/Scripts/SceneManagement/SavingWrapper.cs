@@ -2,9 +2,10 @@ using RPG.Inputs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Saving;
 
 
-namespace RPG.Saving
+namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
@@ -20,6 +21,14 @@ namespace RPG.Saving
             Debug.Log(inputActions);
         }
 
+        private IEnumerator Start()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+
+            fader.FadeOutImmediate();
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+            yield return fader.FadeIn(3f);
+        }
 
         private void Update()
         {

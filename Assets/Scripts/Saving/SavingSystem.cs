@@ -4,68 +4,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 namespace RPG.Saving
 {
     public class SavingSystem : MonoBehaviour
     {
+        public IEnumerator LoadLastScene(string saveFile)
+        {
+            Dictionary<string, object> state = LoadFile(saveFile);
+            if (state.ContainsKey("lastSceneBuildIndex"))
+            {
+                int sceneIndex = (int)state["lastSceneBuildIndex"];
 
+                if (sceneIndex != SceneManager.GetActiveScene().buildIndex)
+                {
+                    yield return SceneManager.LoadSceneAsync(sceneIndex);
+                }
+            }
+            
+            RestorState(state);
+        }
         
 
         public void Save(string saveFile)
-        {
-            string path = GetPathFromSaveFile(saveFile);
-            Debug.Log("saving to " + path);
-            using (FileStream stream = File.Open(path, FileMode.Create))
-            {
-                
-
-                BinaryFormatter formatter = new BinaryFormatter();
-                
-                formatter.Serialize(stream, CaptureState());
-
-                
-            }
-
-            
+        {           
+            Dictionary<string, object> state = LoadFile(saveFile);
+            CaptureState(state);
+            SaveFile(saveFile, state);
         }
 
         
 
         public void Load(string saveFile)
         {
-            string path = GetPathFromSaveFile(saveFile);
-            Debug.Log("loading from " + path);
+           
+            RestorState(LoadFile(saveFile));
+        }
 
-            using (FileStream stream = File.Open(path, FileMode.Open))
+        
+
+        private void SaveFile(string saveFile, Dictionary<string, object> state)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            Debug.Log("saving to " + path);
+            using (FileStream stream = File.Open(path, FileMode.Create))
             {
 
-                BinaryFormatter formatter= new BinaryFormatter();
-                
+                BinaryFormatter formatter = new BinaryFormatter();
 
-                RestorState(formatter.Deserialize(stream));
-                
-                stream.Close();
+                formatter.Serialize(stream, state);
             }
         }
 
-       
-
-        private object CaptureState()
+        private Dictionary<string, object> LoadFile(string saveFile)
         {
-            Dictionary<string, object> state = new Dictionary<string, object>();
+            string path = GetPathFromSaveFile(saveFile);
+            Debug.Log("loading from " + path);
+
+            if (!File.Exists(path))
+            {
+                return new Dictionary<string, object>();
+            }
+
+
+            using (FileStream stream = File.Open(path, FileMode.Open))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+
+                return (Dictionary<string, object>)formatter.Deserialize(stream);
+            }
+        }
+
+        private void CaptureState(Dictionary<string, object> state)
+        {
+            
             foreach(SaveableEntiy saveable in FindObjectsOfType<SaveableEntiy>())
             {
                 state[saveable.GetUniqueIdenerifer()] = saveable.CaptureState();
                 
             }
+            state["lastSceneBuildIndex"] = SceneManager.GetActiveScene().buildIndex;
 
-            return null;
         }
-        private void RestorState(object state)
-        {
-            Dictionary<string, object> stateLoadDictionary = (Dictionary<string, object>)state; 
+        private void RestorState(Dictionary<string, object> state)
+        {            
+
+            foreach(SaveableEntiy saveable in FindObjectsOfType<SaveableEntiy>())
+            {
+                string id = saveable.GetUniqueIdenerifer();
+
+                if(state.ContainsKey(id))
+                {
+                    saveable.RestoreState(state[id]);
+                }
+                
+            }
+
         }
 
         private string GetPathFromSaveFile(string saveFile)

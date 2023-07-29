@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
-
-
+using RPG.Saving;
 
 namespace RPG.SceneManagement
 {
@@ -44,15 +43,21 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad(gameObject);
 
             Fader fader = FindObjectOfType<Fader>();
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
 
             yield return fader.FadeOut(fadeOutTime);
 
-            
+            savingWrapper.SaveGameState();
+
             yield return SceneManager.LoadSceneAsync(sceneIndex);
-            Debug.Log("Traving...");
+            Debug.Log("Travaling...");
+            savingWrapper.LoadGameState();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+
+            savingWrapper.SaveGameState();
+
             yield return new WaitForSeconds(fadeWaitTime);
 
             yield return fader.FadeIn(fadeInTime);
