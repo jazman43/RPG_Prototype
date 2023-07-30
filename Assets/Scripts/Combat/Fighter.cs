@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.core;
-
-
+using System;
 
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour,IAction
     {
-        [SerializeField] private float weaponRange = 2f;
-        [SerializeField] private float timeBetweenAttacks = 1f;
-        [SerializeField] private float damageToDo = 2f;
-        [SerializeField] private GameObject weaponPrefab = null;
-        [SerializeField] private Transform handTransform = null;
+        
+        [SerializeField] private float timeBetweenAttacks = 1f;        
+        [SerializeField] private Transform rightHandTransform = null;
+        [SerializeField] private Transform leftHandTransform = null;
+        [SerializeField] private Weapon defaultWeapon = null;
+
 
 
         [SerializeField]Health combatTarget;
@@ -23,7 +23,7 @@ namespace RPG.Combat
         [SerializeField] private string punchAnimation = "punch";
         [SerializeField] private string stopAttack = "stopAttack";
         private float timeSinceLastAttack = Mathf.Infinity;
-
+        Weapon currentWeapon = null;
         
         Animator animator;
 
@@ -34,6 +34,14 @@ namespace RPG.Combat
             animator = GetComponent<Animator>();
             actionScheduler = GetComponent<ActionScheduler>();
         }
+
+
+        private void Start()
+        {
+            EquipWeapon(defaultWeapon);
+        }
+
+        
 
         private void Update()
         {
@@ -58,6 +66,14 @@ namespace RPG.Combat
                 AttackBehavior();
             }            
         }
+        public void EquipWeapon(Weapon weapon)
+        {
+            currentWeapon = weapon;
+
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
+        }
+
 
         private void AttackBehavior()
         {
@@ -84,7 +100,7 @@ namespace RPG.Combat
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, combatTarget.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, combatTarget.transform.position) < currentWeapon.GetWeaponRange();
         }
 
         public void Cancel()
@@ -113,7 +129,7 @@ namespace RPG.Combat
         void Hit()
         {
             if (combatTarget == null) return;
-            combatTarget.TakeDamage(damageToDo);
+            combatTarget.TakeDamage(currentWeapon.GetDamageToDo());
             Debug.Log("Punch!!");
         }
         void stopAnimation()

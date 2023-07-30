@@ -68,9 +68,8 @@ namespace RPG.Saving
                 serializedObject.ApplyModifiedProperties();
             }
 
-            globalLookUp[property.stringValue] = this;
+            globalLookUp[property.stringValue] = this;            
             
-            Debug.Log("EDIT TIME");
         }
 
         private bool IsUnique(string stringValue)

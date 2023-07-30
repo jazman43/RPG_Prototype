@@ -10,9 +10,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2177234401391617538, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 55378713fd017e6449eb125a80a7bd48,
+        type: 2}
+    - target: {fileID: 2177234401391617538, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
       propertyPath: weaponRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2177234401391617538, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 55378713fd017e6449eb125a80a7bd48,
+        type: 2}
+    - target: {fileID: 2177234401391617538, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 7908433353350432552}
     - target: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
       propertyPath: m_Name
@@ -180,3 +197,9 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!4 &7908433353350432552 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309547840446214448, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5606224787700250136}
+  m_PrefabAsset: {fileID: 0}

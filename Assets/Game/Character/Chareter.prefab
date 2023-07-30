@@ -54,9 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9642da9e9bf3b43961de7f7c05e4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 2
   timeBetweenAttacks: 1
-  damageToDo: 2
+  rightHandTransform: {fileID: 2309547840446214448}
+  leftHandTransform: {fileID: 2309508963610481582}
+  defaultWeapon: {fileID: 11400000, guid: 55378713fd017e6449eb125a80a7bd48, type: 2}
   combatTarget: {fileID: 0}
   punchAnimation: punch
   stopAttack: stopAttack
@@ -133,7 +134,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125062346269887407}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2adc9bd9464612044bd18a0922bf2704, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 9d545e43681431348908eab98e78aa45, type: 3}
   m_Controller: {fileID: 9100000, guid: 2641d3803d8ebdf41b7e20e5e7a7eafb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -361,6 +362,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e11051163540ebf4884417f50c226d1c, type: 3}
+--- !u!4 &2309508963610481582 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4639658337547970, guid: e11051163540ebf4884417f50c226d1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2314143858793112940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2309547840446214448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4596036367733852, guid: e11051163540ebf4884417f50c226d1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2314143858793112940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2311153257902442060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4398255760794400, guid: e11051163540ebf4884417f50c226d1c,
