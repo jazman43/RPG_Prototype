@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using UnityEngine.SceneManagement;
 
 
 namespace RPG.SceneManagement
@@ -23,11 +24,15 @@ namespace RPG.SceneManagement
 
         private IEnumerator Start()
         {
-            Fader fader = FindObjectOfType<Fader>();
+            if(SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                Fader fader = FindObjectOfType<Fader>();
 
-            fader.FadeOutImmediate();
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-            yield return fader.FadeIn(3f);
+                fader.FadeOutImmediate();
+                yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+                yield return fader.FadeIn(3f);
+            }
+            
         }
 
         private void Update()

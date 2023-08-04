@@ -11,33 +11,39 @@ namespace RPG.Menus
     {
 
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
+        [SerializeField] private float camSpeed = 1.0f;
+        [SerializeField] private bool canReset = false;
+        [SerializeField]private GameObject uiMenuToggles = null;
+
+
         private CinemachineTrackedDolly dollyCart;
 
-        private float delayTime = 5f;
-        private float resetThreshold = 0.8f;
-
-        private void Start()
+        private void Awake()
         {
             dollyCart = virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>();
         }
 
+      
+
         private void FixedUpdate()
         {
             
-            if (dollyCart.m_PathPosition > resetThreshold)
-            {                
-                StartCoroutine(WaitForCam());
-            }
+           OnNewGame();
         }
 
-        IEnumerator WaitForCam()
+        private void OnNewGame()
         {
-            // Wait for the specified delay before continuing
-            yield return new WaitForSeconds(delayTime);
+            dollyCart.m_PathPosition += camSpeed * Time.deltaTime;
+            //Debug.Log(dollyCart.m_PathPosition);
+            if(canReset)
+            {
+                if(dollyCart.m_PathPosition > .9f && uiMenuToggles.activeSelf != true)
+                {
+                    dollyCart.m_PathPosition = 0;
+                }
+                
+            }
 
-            // Reset pathPosition to 0 after the delay
-            dollyCart.m_PathPosition = 0;
-            Debug.Log("Camera path position reset after " + delayTime + " seconds.");
         }
     }
 }

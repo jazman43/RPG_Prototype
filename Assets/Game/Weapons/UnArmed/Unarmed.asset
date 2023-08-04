@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f40a214425870b48ab4ddf3b8b26a6f, type: 3}
   m_Name: Unarmed
   m_EditorClassIdentifier: 
-  overrideController: {fileID: 22100000, guid: e2c652ba9439252489f019bc8aba223c, type: 2}
-  equippedPrefabObject: {fileID: 5136381859034788089, guid: 16262adf8a0a6554281186e7839ff94d,
-    type: 3}
+  overrideController: {fileID: 0}
+  equippedPrefabObject: {fileID: 0}
   damageToDo: 3
   weaponRange: 2
   isRightHanded: 1

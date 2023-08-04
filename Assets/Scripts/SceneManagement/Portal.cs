@@ -32,6 +32,13 @@ namespace RPG.SceneManagement
             Debug.Log("Traving..");
         }
 
+
+        public void OnUIClick()
+        {
+            Debug.Log("Start Game");
+            StartCoroutine(Transition());
+        }
+
         private IEnumerator Transition()
         {
             if(sceneIndex < 0)
