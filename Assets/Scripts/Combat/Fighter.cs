@@ -129,8 +129,14 @@ namespace RPG.Combat
         void Hit()
         {
             if (combatTarget == null) return;
-            combatTarget.TakeDamage(currentWeapon.GetDamageToDo());
-            Debug.Log("Punch!!");
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.SpawnProjectile(rightHandTransform, leftHandTransform, combatTarget);
+            }
+            else
+            {
+                combatTarget.TakeDamage(currentWeapon.GetDamageToDo());
+            }           
         }
         void stopAnimation()
         {
