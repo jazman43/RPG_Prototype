@@ -4922,9 +4922,24 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 157240408057872529, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
         type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5218612954689273850}
+    - target: {fileID: 157240408057872529, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
+        type: 3}
       propertyPath: setLifeTimeDis
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 157240408057872529, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
+        type: 3}
+      propertyPath: destroyObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157240408057872529, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
+        type: 3}
+      propertyPath: destroyObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 4474200696252608096}
     - target: {fileID: 435543174001462756, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
         type: 3}
       propertyPath: m_Name
@@ -4989,6 +5004,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4103874579624761104, guid: 5c82fb0d9abc8db4f83a2ef92e7af589, type: 3}
     - {fileID: 6752942129589348399, guid: 5c82fb0d9abc8db4f83a2ef92e7af589, type: 3}
+    - {fileID: 4274263302644683986, guid: 5c82fb0d9abc8db4f83a2ef92e7af589, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7531427368197960145, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
         type: 3}
@@ -5003,6 +5019,12 @@ PrefabInstance:
 --- !u!4 &2801909298654692303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7531427368197960145, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
+    type: 3}
+  m_PrefabInstance: {fileID: 5649590775738364446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5218612954689273850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 435543174001462756, guid: 5c82fb0d9abc8db4f83a2ef92e7af589,
     type: 3}
   m_PrefabInstance: {fileID: 5649590775738364446}
   m_PrefabAsset: {fileID: 0}

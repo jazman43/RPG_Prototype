@@ -1,112 +1,133 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using RPG.Inputs;
 using RPG.Movement;
-using System;
 using RPG.Combat;
-using RPG.core;
-using UnityEngine.Windows;
+using RPG.Attributes;
+using System;
+using UnityEngine.EventSystems;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+               
+        Health health;       
 
-        [Header("Animation")]
-        [SerializeField] private string animSpeed = "forwardSpeed";
-        Animator animator;
 
-        MyInputs myPlayerInputs;
-        Health health;
-        Mover mover;
+        [System.Serializable]
+        struct CursorMapping
+        {
+            public Cursors cursorsType;
+            public Texture2D texture;
+            public Vector2 hotspot;
+        }
+
+        [SerializeField] CursorMapping[] cursorMappings = null;
+        [SerializeField] float raycastRadius = 1f;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
 
 
         private void Awake()
-        {
-            //point and click
-            myPlayerInputs = new MyInputs();
-
-            animator = GetComponent<Animator>();
-            health = GetComponent<Health>();
-            mover = GetComponent<Mover>();
+        {     
+            health = GetComponent<Health>();            
         }
 
-        private void OnEnable()
-        {
-            myPlayerInputs.Enable();
-        }
-
-        private void OnDisable()
-        {
-            myPlayerInputs.Disable();
-        }
+        
 
         private void Update()
         {
+            if (InteractWithUI())
+            {
+                SetCursors(Cursors.UI);
+                return;
+            }
+
             if (health.IsDead())
             {
+                SetCursors(Cursors.OutOfBounds);
                 return;
             }
 
-            if (InteractWithCombat())
-            {
-                return;
-            }
 
-            if (InteractWithMovement()) return;
+            if (InteractWithComponent()) return;
+            
+            
+            GetComponent<PlayerMovement>().Movement();
+            GetComponent<PlayerMovement>().JumpMovement();
 
-            Debug.Log("nothing to do");
         }
 
-        private bool InteractWithCombat()
+        
+
+        private bool InteractWithUI()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            return EventSystem.current.IsPointerOverGameObject();
+        }
+
+
+        private bool InteractWithComponent()
+        {
+            RaycastHit[] hits = RaycastAllSorted();
 
             foreach (RaycastHit hit in hits)
             {
-                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) continue;
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
 
-
-                if (!GetComponent<Fighter>().CanAttack(target.gameObject)) { continue; }
-
-                if (myPlayerInputs.PlayerActions.Move.IsInProgress())
+                foreach(IRaycastable raycastable in raycastables)
                 {
-                    GetComponent<Fighter>().Attack(target.gameObject);
-
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursors(raycastable.GetCursorType());
+                        return true;
+                    }
                 }
-                return true;
             }
             return false;
+
         }
 
-        private bool InteractWithMovement()
+
+        RaycastHit[] RaycastAllSorted()
         {
-
-            RaycastHit hitInfo;
-
-            bool hasHit = Physics.Raycast(GetMouseRay(), out hitInfo);
-
-            if (hasHit)
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
+            float[] distances = new float[hits.Length];
+            for (int i = 0; i < hits.Length; i++)
             {
-                
-                if (myPlayerInputs.PlayerActions.Move.IsInProgress())
-                {
-                    mover.StartMoveAction(hitInfo.point, 1f);
-                }
-                return true;
+                distances[i] = hits[i].distance;
             }
-            return false;
-        }
+            Array.Sort(distances, hits);
+            return hits;
+        }      
+
+        
 
         private Ray GetMouseRay()
         {
-            Vector3 pos = myPlayerInputs.PlayerActions.mousePos.ReadValue<Vector2>();
-            //Debug.Log(pos);
+            Vector3 pos = GetComponent<InputActions>().MousePosition();
+            
             Vector3 mousePos = new Vector3(pos.x, pos.y, 0f);
-            //                                  //                  //
+            
             return Camera.main.ScreenPointToRay(mousePos);
+        }
+
+        private void SetCursors(Cursors cursors)
+        {
+            CursorMapping mapping = GetCursorMapping(cursors);
+
+            Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
+        }
+
+        private CursorMapping GetCursorMapping(Cursors type)
+        {
+            foreach(CursorMapping mapping in cursorMappings)
+            {
+                if(mapping.cursorsType == type)
+                {
+                    return mapping;
+                }
+            }
+            return cursorMappings[0];
         }
 
     }

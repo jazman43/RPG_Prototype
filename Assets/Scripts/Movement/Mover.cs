@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using RPG.core;
 using RPG.Saving;
+using RPG.Attributes;
+
 
 namespace RPG.Movement
 {
@@ -11,6 +13,7 @@ namespace RPG.Movement
     {
         [SerializeField] private Transform target;
         [SerializeField] private float maxSpeed = 4f;
+        [SerializeField] float maxNavPathLength = 40f;
 
         [Header("Animation")]
         [SerializeField] private string animSpeed = "forwardSpeed";
@@ -44,6 +47,17 @@ namespace RPG.Movement
             MoveTo(destiation, speedFraction);
         }
 
+        public bool CanMoveTo(Vector3 destination)
+        {
+            NavMeshPath path = new NavMeshPath();
+            bool hasPath = NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path);
+            if (!hasPath) return false;
+            if (path.status != NavMeshPathStatus.PathComplete) return false;
+            if (GetPathLength(path) > maxNavPathLength) return false;
+
+            return true;
+        }
+
         public void MoveTo(Vector3 destiation, float speed)
         {
             playerControler.SetDestination(destiation);
@@ -67,6 +81,18 @@ namespace RPG.Movement
             playerControler.isStopped = true;
         }
 
+        private float GetPathLength(NavMeshPath path)
+        {
+            float total = 0;
+            if (path.corners.Length < 2) return total;
+            for (int i = 0; i < path.corners.Length - 1; i++)
+            {
+                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+
+            return total;
+        }
+
         public object CaptureState()
         {
             return new SerializableVector3(transform.position);
@@ -77,7 +103,6 @@ namespace RPG.Movement
             SerializableVector3 position = (SerializableVector3)state;
             GetComponent<NavMeshAgent>().enabled = false;
             transform.position = position.ToVector();
-
             GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<ActionScheduler>().CancelCurrentAction();
             

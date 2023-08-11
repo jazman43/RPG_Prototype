@@ -13,16 +13,15 @@ namespace RPG.Saving
         public IEnumerator LoadLastScene(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
+
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
             if (state.ContainsKey("lastSceneBuildIndex"))
             {
-                int sceneIndex = (int)state["lastSceneBuildIndex"];
-
-                if (sceneIndex != SceneManager.GetActiveScene().buildIndex)
-                {
-                    yield return SceneManager.LoadSceneAsync(sceneIndex);
-                }
+                sceneIndex = (int)state["lastSceneBuildIndex"];
+                
             }
-            
+            yield return SceneManager.LoadSceneAsync(sceneIndex);
             RestorState(state);
         }
         
@@ -76,6 +75,11 @@ namespace RPG.Saving
             }
         }
 
+        public void Delete(string defaultSaveFile)
+        {
+            File.Delete(GetPathFromSaveFile(defaultSaveFile));
+        }
+
         private void CaptureState(Dictionary<string, object> state)
         {
             
@@ -105,7 +109,7 @@ namespace RPG.Saving
 
         private string GetPathFromSaveFile(string saveFile)
         {
-            return Path.Combine(Application.persistentDataPath, saveFile + ".bin");
+            return Path.Combine(Application.persistentDataPath, saveFile + ".SaveRPG");
         }
     }
 }

@@ -19,17 +19,22 @@ namespace RPG.SceneManagement
         {
             
             inputActions = new MyInputs();
-            Debug.Log(inputActions);
+           
+            //Debug.Log(inputActions);
         }
 
-        private IEnumerator Start()
+        private void Start()
+        {
+            StartCoroutine(LoadLastScene());
+        }
+
+        private IEnumerator LoadLastScene()
         {
             if(SceneManager.GetActiveScene().buildIndex != 0)
             {
-                Fader fader = FindObjectOfType<Fader>();
-
-                fader.FadeOutImmediate();
                 yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+                Fader fader = FindObjectOfType<Fader>();
+                fader.FadeOutImmediate();                
                 yield return fader.FadeIn(3f);
             }
             
@@ -59,6 +64,11 @@ namespace RPG.SceneManagement
         public void LoadGameState()
         {
             GetComponent<SavingSystem>().Load(defaultSaveFile);
+        }
+
+        public void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
     }
 }

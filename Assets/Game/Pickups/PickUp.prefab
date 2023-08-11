@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 581502502269861661}
   - component: {fileID: 586966971608441633}
   - component: {fileID: 5932999950144307756}
+  - component: {fileID: 3229097219308701071}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: Untagged
@@ -67,3 +68,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpEquippable: {fileID: 0}
+  respawnTime: 5
+--- !u!114 &3229097219308701071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959053029152063601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f742d49cc7d87d24585c746bc95a72b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

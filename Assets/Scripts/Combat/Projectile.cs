@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.core;
-using System;
+using RPG.Attributes;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -14,7 +14,10 @@ namespace RPG.Combat
         
         [SerializeField] Health combatTarget = null;
         [SerializeField] private float damage = 0;
-        
+        [SerializeField] private GameObject[] destroyObject = null;
+        [SerializeField] UnityEvent onHit;
+
+        GameObject instigator = null;
 
         private void Start()
         {
@@ -25,12 +28,13 @@ namespace RPG.Combat
             
         }
 
-        public void SetTarget(Health target, float damageTarget)
+        public void SetTarget(Health target, GameObject instigator , float damageTarget)
         {
             this.combatTarget = target;
             this.damage = damageTarget;
+            this.instigator = instigator;
 
-
+            Debug.Log(instigator);
             Destroy(gameObject, 5f);
         }
 
@@ -64,16 +68,24 @@ namespace RPG.Combat
             Debug.Log(health + " hello " + other);
             if (combatTarget != null && health != combatTarget) return;
             if (health == null || health.IsDead()) return;
+            if (other.gameObject == instigator) return;
 
-            combatTarget.TakeDamage(damage);
+            combatTarget.TakeDamage(instigator ,damage);
 
-            if(hitEffect != null)
+            speed = 0;
+
+            onHit.Invoke();
+
+            if (hitEffect != null)
             {
                 Instantiate(hitEffect, GetShootAtPos(), transform.rotation);
             }
             
-
-            Destroy(gameObject);
+            foreach(GameObject toDestroy in destroyObject)
+            {
+                Destroy(toDestroy);
+            }
+            Destroy(gameObject, 0.5f);
             
         }
     }

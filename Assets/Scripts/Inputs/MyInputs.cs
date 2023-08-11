@@ -187,6 +187,275 @@ namespace RPG.Inputs
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlayerActionsTheirdPerson"",
+            ""id"": ""c4f2dbf5-e502-4141-b6c9-f9d7839b8693"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""cb9f7aeb-e8c6-47ba-8dfb-754af60b3f97"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamraMovment"",
+                    ""type"": ""Value"",
+                    ""id"": ""6bde3c87-c9b9-492f-8997-62bed4378c48"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""a105b7b2-87e5-41c3-83ad-e70cf4e35f67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc8a9435-908b-477d-914e-422e960a61d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BasicAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a476295-3be7-481c-8a22-69473404e35f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""236acffe-66af-433d-a7b6-c0c5d2707f72"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""4a113cff-51c5-4c4b-a679-29700336f23f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""429d5669-1cdc-45a4-9dc5-dce2711341da"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""1f0dafbf-46b8-4f9f-bca5-320eccea01bc"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ef5ab651-e34a-4c6f-8892-1340f4130711"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""005936b0-7442-4d4f-81c5-60c04264b438"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2f6df5fd-21c4-43c5-bf90-4a0bf3b8ceac"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7eb0dc59-52b4-4c8d-8ee5-d1ccb6ad9af4"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82e9f25d-4c25-4b81-bd5a-e17afc2eaef1"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""InvertVector2(invertX=false),StickDeadzone,ScaleVector2(x=300,y=300)"",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""CamraMovment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0871d98f-39c2-4eb6-8834-f0b027fa2a3b"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""CamraMovment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""672a139f-ce0f-49b5-aacf-c69717d416a9"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67ae1eb5-e923-49a7-b030-0692347b5777"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a76408f-e30f-4476-a923-524cb939547e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""062924eb-f4e4-4c4f-9f92-836f42e7f939"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""136451aa-8e2a-4846-a7ad-cb5bd7f7274d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""BasicAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""665fe253-2ac9-4926-8b0b-85e378d8c847"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""BasicAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c6db788-5cca-4949-b0e6-4ddc59185815"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""PauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b53f151-b373-46de-b556-128558fb259f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""PauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d6040ea-73a5-4dcb-9992-c922f0366392"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aba47234-0fc5-4d9e-b19f-3bd2a80acd02"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -226,6 +495,15 @@ namespace RPG.Inputs
             m_PlayerActions_mousePos = m_PlayerActions.FindAction("mousePos", throwIfNotFound: true);
             m_PlayerActions_TEST_SAVE = m_PlayerActions.FindAction("TEST_SAVE", throwIfNotFound: true);
             m_PlayerActions_TEST_LOAD = m_PlayerActions.FindAction("TEST_LOAD", throwIfNotFound: true);
+            // PlayerActionsTheirdPerson
+            m_PlayerActionsTheirdPerson = asset.FindActionMap("PlayerActionsTheirdPerson", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_Movement = m_PlayerActionsTheirdPerson.FindAction("Movement", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_CamraMovment = m_PlayerActionsTheirdPerson.FindAction("CamraMovment", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_Interact = m_PlayerActionsTheirdPerson.FindAction("Interact", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_Jump = m_PlayerActionsTheirdPerson.FindAction("Jump", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_BasicAttack = m_PlayerActionsTheirdPerson.FindAction("BasicAttack", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_PauseMenu = m_PlayerActionsTheirdPerson.FindAction("PauseMenu", throwIfNotFound: true);
+            m_PlayerActionsTheirdPerson_Sprint = m_PlayerActionsTheirdPerson.FindAction("Sprint", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -361,6 +639,100 @@ namespace RPG.Inputs
             }
         }
         public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+        // PlayerActionsTheirdPerson
+        private readonly InputActionMap m_PlayerActionsTheirdPerson;
+        private List<IPlayerActionsTheirdPersonActions> m_PlayerActionsTheirdPersonActionsCallbackInterfaces = new List<IPlayerActionsTheirdPersonActions>();
+        private readonly InputAction m_PlayerActionsTheirdPerson_Movement;
+        private readonly InputAction m_PlayerActionsTheirdPerson_CamraMovment;
+        private readonly InputAction m_PlayerActionsTheirdPerson_Interact;
+        private readonly InputAction m_PlayerActionsTheirdPerson_Jump;
+        private readonly InputAction m_PlayerActionsTheirdPerson_BasicAttack;
+        private readonly InputAction m_PlayerActionsTheirdPerson_PauseMenu;
+        private readonly InputAction m_PlayerActionsTheirdPerson_Sprint;
+        public struct PlayerActionsTheirdPersonActions
+        {
+            private @MyInputs m_Wrapper;
+            public PlayerActionsTheirdPersonActions(@MyInputs wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Movement => m_Wrapper.m_PlayerActionsTheirdPerson_Movement;
+            public InputAction @CamraMovment => m_Wrapper.m_PlayerActionsTheirdPerson_CamraMovment;
+            public InputAction @Interact => m_Wrapper.m_PlayerActionsTheirdPerson_Interact;
+            public InputAction @Jump => m_Wrapper.m_PlayerActionsTheirdPerson_Jump;
+            public InputAction @BasicAttack => m_Wrapper.m_PlayerActionsTheirdPerson_BasicAttack;
+            public InputAction @PauseMenu => m_Wrapper.m_PlayerActionsTheirdPerson_PauseMenu;
+            public InputAction @Sprint => m_Wrapper.m_PlayerActionsTheirdPerson_Sprint;
+            public InputActionMap Get() { return m_Wrapper.m_PlayerActionsTheirdPerson; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PlayerActionsTheirdPersonActions set) { return set.Get(); }
+            public void AddCallbacks(IPlayerActionsTheirdPersonActions instance)
+            {
+                if (instance == null || m_Wrapper.m_PlayerActionsTheirdPersonActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_PlayerActionsTheirdPersonActionsCallbackInterfaces.Add(instance);
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @CamraMovment.started += instance.OnCamraMovment;
+                @CamraMovment.performed += instance.OnCamraMovment;
+                @CamraMovment.canceled += instance.OnCamraMovment;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @BasicAttack.started += instance.OnBasicAttack;
+                @BasicAttack.performed += instance.OnBasicAttack;
+                @BasicAttack.canceled += instance.OnBasicAttack;
+                @PauseMenu.started += instance.OnPauseMenu;
+                @PauseMenu.performed += instance.OnPauseMenu;
+                @PauseMenu.canceled += instance.OnPauseMenu;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+            }
+
+            private void UnregisterCallbacks(IPlayerActionsTheirdPersonActions instance)
+            {
+                @Movement.started -= instance.OnMovement;
+                @Movement.performed -= instance.OnMovement;
+                @Movement.canceled -= instance.OnMovement;
+                @CamraMovment.started -= instance.OnCamraMovment;
+                @CamraMovment.performed -= instance.OnCamraMovment;
+                @CamraMovment.canceled -= instance.OnCamraMovment;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+                @BasicAttack.started -= instance.OnBasicAttack;
+                @BasicAttack.performed -= instance.OnBasicAttack;
+                @BasicAttack.canceled -= instance.OnBasicAttack;
+                @PauseMenu.started -= instance.OnPauseMenu;
+                @PauseMenu.performed -= instance.OnPauseMenu;
+                @PauseMenu.canceled -= instance.OnPauseMenu;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
+            }
+
+            public void RemoveCallbacks(IPlayerActionsTheirdPersonActions instance)
+            {
+                if (m_Wrapper.m_PlayerActionsTheirdPersonActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPlayerActionsTheirdPersonActions instance)
+            {
+                foreach (var item in m_Wrapper.m_PlayerActionsTheirdPersonActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_PlayerActionsTheirdPersonActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public PlayerActionsTheirdPersonActions @PlayerActionsTheirdPerson => new PlayerActionsTheirdPersonActions(this);
         private int m_KeyBoardmouseSchemeIndex = -1;
         public InputControlScheme KeyBoardmouseScheme
         {
@@ -386,6 +758,16 @@ namespace RPG.Inputs
             void OnMousePos(InputAction.CallbackContext context);
             void OnTEST_SAVE(InputAction.CallbackContext context);
             void OnTEST_LOAD(InputAction.CallbackContext context);
+        }
+        public interface IPlayerActionsTheirdPersonActions
+        {
+            void OnMovement(InputAction.CallbackContext context);
+            void OnCamraMovment(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+            void OnBasicAttack(InputAction.CallbackContext context);
+            void OnPauseMenu(InputAction.CallbackContext context);
+            void OnSprint(InputAction.CallbackContext context);
         }
     }
 }

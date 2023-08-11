@@ -5,7 +5,9 @@ using RPG.Movement;
 using UnityEngine.AI;
 using RPG.core;
 using RPG.Combat;
-using MyRPG.Control;
+using RPG.Attributes;
+using Jareds.Utils;
+
 
 namespace RPG.Control
 {
@@ -13,9 +15,11 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float supicionTime = 6f;
+        [SerializeField] float agroCooldownTime = 5f;
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float wayPointTolerance = 1f;
         [SerializeField] float wayPointWait = 6f;
+        [SerializeField] float shoutDistance = 5f;
         [SerializeField][Range(0, 1)] float patrolSpeedFraction = 0.2f;
 
         private NavMeshAgent agent;
@@ -24,10 +28,11 @@ namespace RPG.Control
         private Fighter fighter;
         private Health health;
 
-        private Vector3 guardPos;
+        private LazyJaredValue<Vector3> guardPos;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         int currentWayPointIndex = 0;
         float timeSinceLastWayPoint = Mathf.Infinity;
+        float timeSinceAggrevated = Mathf.Infinity;
 
 
         private void Awake()
@@ -38,11 +43,19 @@ namespace RPG.Control
             fighter = GetComponent<Fighter>();
             player = GameObject.FindWithTag("Player");
 
+            guardPos = new LazyJaredValue<Vector3>(GetGuardPosition);
+            guardPos.ForceInit();
+
+        }
+
+        private Vector3 GetGuardPosition()
+        {
+            return transform.position;
         }
 
         private void Start()
         {
-            guardPos = transform.position;
+           
         }
 
         private void Update()
@@ -52,9 +65,9 @@ namespace RPG.Control
                 return;
             }
 
-            if (IsInRangeToChace() && fighter.CanAttack(player))
+            if (IsAggrevated() && fighter.CanAttack(player))
             {
-                timeSinceLastSawPlayer = 0;
+                
                 AttackPlayer();
                 //agent.speed = 3.5f;
             }
@@ -69,16 +82,19 @@ namespace RPG.Control
             }
             timeSinceLastSawPlayer += Time.deltaTime;
             timeSinceLastWayPoint += Time.deltaTime;
+            timeSinceAggrevated += Time.deltaTime;
         }
 
-        private bool IsInRangeToChace()
+        public void Aggrevate()
         {
-            return Vector3.Distance(transform.position, player.transform.position) < chaseDistance;
+            timeSinceAggrevated = 0;
         }
 
+
+       
         private void PatrolBehavior()
         {
-            Vector3 nextPosition = guardPos;
+            Vector3 nextPosition = guardPos.value;
 
             if (patrolPath != null)
             {
@@ -115,8 +131,31 @@ namespace RPG.Control
 
         private void AttackPlayer()
         {
+            timeSinceLastSawPlayer = 0;
+
             fighter.Attack(player);
+
+            AggrevateNearbyEnemies();
         }
+
+        private void AggrevateNearbyEnemies()
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up, 0);
+            foreach (RaycastHit hit in hits)
+            {
+                AiController ai = hit.collider.GetComponent<AiController>();
+                if (ai == null) continue;
+
+                ai.Aggrevate();
+            }
+        }
+
+        private bool IsAggrevated()
+        {
+            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            return distanceToPlayer < chaseDistance || timeSinceAggrevated < agroCooldownTime;
+        }
+
 
         private void OnDrawGizmosSelected()
         {

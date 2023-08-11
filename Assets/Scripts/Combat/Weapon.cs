@@ -1,6 +1,5 @@
 using UnityEngine;
-using RPG.core;
-using System;
+using RPG.Attributes;
 
 namespace RPG.Combat
 {
@@ -8,8 +7,9 @@ namespace RPG.Combat
     public class Weapon : ScriptableObject
     {
         [SerializeField] private AnimatorOverrideController overrideController = null;
-        [SerializeField] private GameObject equippedPrefabObject = null;
+        [SerializeField] private OnWeaponEquipment equippedPrefabObject = null;
         [SerializeField] private float damageToDo = 2f;
+        [SerializeField] private float percentageBonus = 2f;
         [SerializeField] private float weaponRange = 2f;
         [SerializeField] private bool isRightHanded = true;
         [SerializeField] private Projectile projectile =null;
@@ -17,21 +17,29 @@ namespace RPG.Combat
 
         const string weaponName = "Weapon";
 
-        public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
+        public OnWeaponEquipment Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
         {
             DestroyPreviosWeapon(rightHandTransform, leftHandTransform);
 
+            OnWeaponEquipment weapon = null;
+
             if(equippedPrefabObject != null)
             {
-                GameObject weapon = Instantiate(equippedPrefabObject, HandTransform(rightHandTransform,leftHandTransform));
-                weapon.name = weaponName;
-            }            
+                weapon = Instantiate(equippedPrefabObject, HandTransform(rightHandTransform,leftHandTransform));
+                weapon.gameObject.name = weaponName;
+            }
 
-            if(overrideController != null)
+            var overRideAnimation = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+            if (overrideController != null)
             {
                 animator.runtimeAnimatorController = overrideController;
             }
-            
+            else if (overRideAnimation != null)
+            {                
+                animator.runtimeAnimatorController = overRideAnimation.runtimeAnimatorController;               
+            }
+            return weapon;
         }
 
         private void DestroyPreviosWeapon(Transform rightHandTransform, Transform leftHandTransform)
@@ -55,16 +63,24 @@ namespace RPG.Combat
             return projectile != null;
         }
 
-        public void SpawnProjectile(Transform rightHandTransform, Transform leftHandTransform, Health target)
+        public void SpawnProjectile(Transform rightHandTransform, Transform leftHandTransform, Health target, GameObject instigator, float calcuatedDamage)
         {
             Projectile projectileCreate = Instantiate(projectile, HandTransform(rightHandTransform, leftHandTransform).position , Quaternion.identity);
-            projectile.SetTarget(target, damageToDo);
+            projectileCreate.SetTarget(target,instigator , calcuatedDamage);
+            
         }
 
         public float GetDamageToDo()
         {
             return damageToDo;
         }
+
+        public float GetPercentageBonus()
+        {
+            return percentageBonus;
+        }
+
+
         public float GetWeaponRange()
         {
             return weaponRange;
