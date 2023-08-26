@@ -11,6 +11,11 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         const string defaultSaveFile = "Save";
+        [SerializeField] float fadeInTime = 0.2f;
+        [SerializeField] float fadeOutTime = 0.2f;
+        [SerializeField] int firstLevelBuildIndex = 1;
+        [SerializeField] int menuLevelBuildIndex = 0;
+
 
         MyInputs inputActions;
 
@@ -23,52 +28,91 @@ namespace RPG.SceneManagement
             //Debug.Log(inputActions);
         }
 
-        private void Start()
+        public void ContinueGame()
         {
+            if (!PlayerPrefs.HasKey(defaultSaveFile)) return;
+            if (GetComponent<SavingSystem>().SaveExists(GetCurrentSave())) return;
+            Debug.Log("Loading.. continue");
             StartCoroutine(LoadLastScene());
         }
 
+        public void NewGame(string saveFile)
+        {
+            if (string.IsNullOrEmpty(saveFile)) return;
+            SetCurrentSave(saveFile);
+            StartCoroutine(LoadFirstScene());
+        }
+
+        public void LoadGame(string saveFile)
+        {
+            SetCurrentSave(saveFile);
+            ContinueGame();
+        }
+
+        public void LoadMenu()
+        {
+            StartCoroutine(LoadMenuScene());
+        }
+
+
+
+        private void SetCurrentSave(string saveFile)
+        {
+            Debug.Log(saveFile);
+            PlayerPrefs.SetString(defaultSaveFile, saveFile);
+        }
+
+        private string GetCurrentSave()
+        {
+            return PlayerPrefs.GetString(defaultSaveFile);
+        }
+
+
         private IEnumerator LoadLastScene()
-        {
-            if(SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-                Fader fader = FindObjectOfType<Fader>();
-                fader.FadeOutImmediate();                
-                yield return fader.FadeIn(3f);
-            }
-            
+        {   
+            Fader fader = FindObjectOfType<Fader>();
+            Debug.Log("loading last Scene");
+            yield return fader.FadeOut(fadeOutTime);
+            yield return GetComponent<SavingSystem>().LoadLastScene(GetCurrentSave());
+            yield return fader.FadeIn(fadeInTime);
         }
 
-        private void Update()
+        private IEnumerator LoadFirstScene()
         {
-
-            //Debug.Log(inputActions.PlayerActions.TEST_SAVE.IsPressed());
-
-            if (inputActions.PlayerActions.TEST_SAVE.IsPressed())
-            {
-                Debug.Log("hello saving");
-                
-            }
-            if(inputActions.PlayerActions.TEST_LOAD.IsPressed())
-            {
-                GetComponent<SavingSystem>().Load(defaultSaveFile);
-            }
+            Fader fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return SceneManager.LoadSceneAsync(firstLevelBuildIndex);
+            yield return fader.FadeIn(fadeInTime);
         }
+
+        private IEnumerator LoadMenuScene()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return SceneManager.LoadSceneAsync(menuLevelBuildIndex);
+            yield return fader.FadeIn(fadeInTime);
+        }
+
+        
 
         public void SaveGameState()
         {
-            GetComponent<SavingSystem>().Save(defaultSaveFile);
+            GetComponent<SavingSystem>().Save(GetCurrentSave());
         }
 
         public void LoadGameState()
         {
-            GetComponent<SavingSystem>().Load(defaultSaveFile);
+            GetComponent<SavingSystem>().Load(GetCurrentSave());
         }
 
         public void Delete()
         {
-            GetComponent<SavingSystem>().Delete(defaultSaveFile);
+            GetComponent<SavingSystem>().Delete(GetCurrentSave());
+        }
+
+        public IEnumerable<string> ListSaves()
+        {
+            return GetComponent<SavingSystem>().ListSaves();
         }
     }
 }

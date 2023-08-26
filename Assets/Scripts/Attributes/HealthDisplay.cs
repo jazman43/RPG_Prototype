@@ -22,16 +22,12 @@ namespace RPG.Attributes
         private void Awake()
         {
             health = GameObject.FindWithTag("Player").GetComponent<Health>();
-             
             healthSlider = healthUI.GetComponent<Slider>();
-           
-            healthText = textHealthUI.GetComponent<Text>();            
+
+            healthText = textHealthUI.GetComponent<Text>();
         }
 
-        private void Start()
-        {
-                        
-        }
+        
 
         private void Update()
         {

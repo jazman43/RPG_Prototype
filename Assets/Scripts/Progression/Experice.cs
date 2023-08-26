@@ -16,7 +16,7 @@ namespace RPG.Progression
 
         /*private void Update()
         {
-            
+            // add XP to Player over time (For Debuging)
             
                 GainExperience(Time.deltaTime * 1000);
         }*/

@@ -41,7 +41,16 @@ namespace RPG.Saving
             RestorState(LoadFile(saveFile));
         }
 
-        
+        public IEnumerable<string> ListSaves()
+        {
+            foreach (string path in Directory.EnumerateFiles(Application.persistentDataPath))
+            {
+                if (Path.GetExtension(path) == ".SaveRPG")
+                {
+                    yield return Path.GetFileNameWithoutExtension(path);
+                }
+            }
+        }
 
         private void SaveFile(string saveFile, Dictionary<string, object> state)
         {
@@ -78,6 +87,15 @@ namespace RPG.Saving
         public void Delete(string defaultSaveFile)
         {
             File.Delete(GetPathFromSaveFile(defaultSaveFile));
+        }
+
+        public bool SaveExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            Debug.Log("loading from " + path);
+
+            return (!File.Exists(path));            
+            
         }
 
         private void CaptureState(Dictionary<string, object> state)

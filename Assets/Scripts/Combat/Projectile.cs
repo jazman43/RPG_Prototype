@@ -13,6 +13,7 @@ namespace RPG.Combat
         [SerializeField] private GameObject hitEffect = null;
         
         [SerializeField] Health combatTarget = null;
+        private Vector3 targetPoint;
         [SerializeField] private float damage = 0;
         [SerializeField] private GameObject[] destroyObject = null;
         [SerializeField] UnityEvent onHit;
@@ -20,37 +21,50 @@ namespace RPG.Combat
         GameObject instigator = null;
 
         private void Start()
-        {
-            if (!isHoming)
-            {
-                transform.LookAt(GetShootAtPos());
-            }
-            
-        }
-
-        public void SetTarget(Health target, GameObject instigator , float damageTarget)
-        {
-            this.combatTarget = target;
-            this.damage = damageTarget;
-            this.instigator = instigator;
-
-            Debug.Log(instigator);
-            Destroy(gameObject, 5f);
+        {            
+           transform.LookAt(GetShootAtPos()); 
         }
 
         private void Update()
         {
-            if (combatTarget == null ) return;
-            if (isHoming && !combatTarget.IsDead())
-            { 
+            if (combatTarget != null && isHoming && !combatTarget.IsDead())
+            {
                 transform.LookAt(GetShootAtPos());
             }
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
+        public void SetTarget(Health target, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, target);
+        }
+
+        public void SetTarget(Vector3 targetPoint, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, null, targetPoint);
+        }
+
+
+        public void SetTarget(GameObject instigator, float damage, Health target = null, Vector3 targetPoint = default)
+        {
+            this.combatTarget = target;
+            this.targetPoint = targetPoint;
+            this.damage = damage;
+            this.instigator = instigator;
+
+            
+            Destroy(gameObject, 5f);
+        }
+
+        
+
         private Vector3 GetShootAtPos()
         {
-            
+            if(combatTarget == null)
+            {
+                return targetPoint;
+            }
+
             CapsuleCollider targetCapsule = combatTarget.GetComponent<CapsuleCollider>();
             if (targetCapsule == null)
             {
@@ -65,12 +79,12 @@ namespace RPG.Combat
         {
 
             Health health = other.GetComponent<Health>();
-            Debug.Log(health + " hello " + other);
+            
             if (combatTarget != null && health != combatTarget) return;
             if (health == null || health.IsDead()) return;
             if (other.gameObject == instigator) return;
 
-            combatTarget.TakeDamage(instigator ,damage);
+            health.TakeDamage(instigator ,damage);
 
             speed = 0;
 

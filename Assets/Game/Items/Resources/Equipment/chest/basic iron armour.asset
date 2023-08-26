@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b8caefce91084184d8ea94455bcf7, type: 3}
+  m_Name: basic iron armour
+  m_EditorClassIdentifier: 
+  itemID: 5d9c0029-83d7-416c-9e5a-7fd97d6d0db1
+  displayName: basic iron armour
+  description: 
+  icon: {fileID: 21300000, guid: c6191213349413049800021dfffca939, type: 3}
+  pickup: {fileID: 5547812115555899506, guid: d3839777af7f8424893dc00dbd0cab57, type: 3}
+  stackable: 0
+  price: 50
+  category: 1
+  allowedEquipLocation: 2
+  equipCondition:
+    and: []
+  additiveModifiers:
+  - stat: 0
+    value: 5
+  - stat: 8
+    value: 5
+  percentageModifiers:
+  - stat: 0
+    value: 5
+  - stat: 8
+    value: 5

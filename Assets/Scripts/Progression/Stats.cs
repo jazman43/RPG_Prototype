@@ -6,6 +6,11 @@ namespace RPG.Progression
         Health,
         ExperienceReward,
         ExperienceToLevelUp,
-        Damage
+        Damage,
+        Mana,
+        ManaRegenRate,
+        TotalTraitPoints,
+        BuyingDiscountPercentage,
+        defence
     }
 }

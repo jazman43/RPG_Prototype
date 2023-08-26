@@ -33,6 +33,29 @@ namespace RPG.Inputs
             return inputs.PlayerActions.mousePos.ReadValue<Vector2>();
         }
 
+        public bool ShowUI()
+        {
+            return inputs.PlayerActions.ShowUI.triggered;
+        }
+
+        public bool GetActions1()
+        {
+            return inputs.PlayerActions.ActionBar1.triggered;
+        }
+
+        public bool GetActions2()
+        {
+            return inputs.PlayerActions.ActionBar2.triggered;
+        }
+        public bool GetActions3()
+        {
+            return inputs.PlayerActions.ActionBar3.triggered;
+        }
+        public bool GetActions4()
+        {
+            return inputs.PlayerActions.ActionBar4.triggered;
+        }
+
         //thirdPerson
 
         public Vector2 CharatcerMovement()
@@ -58,6 +81,12 @@ namespace RPG.Inputs
         public bool CharacterSprint()
         {
             return inputs.PlayerActionsTheirdPerson.Sprint.IsPressed();
+        }
+
+        public Vector2 Look()
+        {
+            return inputs.PlayerActionsTheirdPerson.CamraMovment.ReadValue<Vector2>();
+            
         }
 
     }

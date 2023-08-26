@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6087579739341869889}
   - component: {fileID: 2177234401391617538}
   - component: {fileID: 7251931862985550403}
-  - component: {fileID: 8208126002323231533}
   - component: {fileID: 5059229381071885959}
   - component: {fileID: 8485177727738780499}
   - component: {fileID: 6044605913800029624}
@@ -22,6 +21,7 @@ GameObject:
   - component: {fileID: 7076927269528587233}
   - component: {fileID: 5221570410164010035}
   - component: {fileID: 996192226277445377}
+  - component: {fileID: 1256462025706443677}
   m_Layer: 0
   m_Name: Chareter
   m_TagString: Player
@@ -63,6 +63,7 @@ MonoBehaviour:
   rightHandTransform: {fileID: 2309547840446214448}
   leftHandTransform: {fileID: 2309508963610481582}
   defaultWeapon: {fileID: 11400000, guid: 55378713fd017e6449eb125a80a7bd48, type: 2}
+  autoAttackRange: 4
   combatTarget: {fileID: 0}
   punchAnimation: punch
   stopAttack: stopAttack
@@ -117,22 +118,6 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerActions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8208126002323231533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3125062346269887407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcaed754e42d51f42b9b8004cdf765ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animSpeed: Speed
-  cursorMappings: []
-  raycastRadius: 1
-  maxNavMeshProjectionDistance: 1
 --- !u!95 &5059229381071885959
 Animator:
   serializedVersion: 5
@@ -222,9 +207,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   supicionTime: 6
+  agroCooldownTime: 5
   patrolPath: {fileID: 0}
   wayPointTolerance: 1
   wayPointWait: 6
+  shoutDistance: 5
   patrolSpeedFraction: 0.2
 --- !u!114 &3056048307106321421
 MonoBehaviour:
@@ -323,6 +310,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1256462025706443677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125062346269887407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caca8f6c217f1654f83a8e01d4351006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  conversantName: 
 --- !u!1001 &1474342216927757126
 PrefabInstance:
   m_ObjectHideFlags: 0

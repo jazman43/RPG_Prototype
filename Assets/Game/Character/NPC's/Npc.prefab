@@ -8,6 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1119897057602796889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: supicionTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119897057602796889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: chaseDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119897057602796889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: shoutDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119897057602796889, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: agroCooldownTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256462025706443677, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 27611acc357e4864193346a2b5aaf11c,
+        type: 2}
+    - target: {fileID: 1256462025706443677, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      propertyPath: conversantName
+      value: Guy
+      objectReference: {fileID: 0}
     - target: {fileID: 1474342216927734590, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
         type: 3}
       propertyPath: m_IsActive
@@ -98,6 +129,7 @@ PrefabInstance:
     - {fileID: 8208126002323231533, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
     - {fileID: 8485177727738780499, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
     - {fileID: 2272482213439706422, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
+    - {fileID: 2177234401391617538, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -105,7 +137,31 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 180807751555689381}
+    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5011479747021130449}
+    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7526196588601758658}
+    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7800377153678819808}
   m_SourcePrefab: {fileID: 100100000, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
+--- !u!4 &5004422680290743080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309547840446214448, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7313404272097518104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5004458258592117174 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2309508963610481582, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7313404272097518104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5629532289570433463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
@@ -134,3 +190,63 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5011479747021130449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629532289570433463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9642da9e9bf3b43961de7f7c05e4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0
+  rightHandTransform: {fileID: 5004458258592117174}
+  leftHandTransform: {fileID: 5004422680290743080}
+  defaultWeapon: {fileID: 11400000, guid: 55378713fd017e6449eb125a80a7bd48, type: 2}
+  combatTarget: {fileID: 0}
+  punchAnimation: punch
+  stopAttack: stopAttack
+--- !u!114 &7526196588601758658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629532289570433463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adecd80eba9ef940bc5b8fc57658298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7526196588601758658}
+        m_TargetAssemblyTypeName: RPG.Dialogue.DialogueTrigger, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7800377153678819808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629532289570433463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f8be4928d6b7a42ae3817a73e03a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 0}

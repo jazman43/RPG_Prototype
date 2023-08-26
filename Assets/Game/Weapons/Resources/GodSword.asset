@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f40a214425870b48ab4ddf3b8b26a6f, type: 3}
   m_Name: GodSword
   m_EditorClassIdentifier: 
+  itemID: 38b498bc-3cc5-4aca-8d16-424bb853c358
+  displayName: God Sword
+  description: A sword from the gods can one hit kill anything
+  icon: {fileID: 21300000, guid: b403d947140108b47873efd6192564ab, type: 3}
+  pickup: {fileID: 5547812115555899506, guid: d3839777af7f8424893dc00dbd0cab57, type: 3}
+  stackable: 0
+  price: 10000
+  category: 2
+  allowedEquipLocation: 5
+  equipCondition:
+    and: []
   overrideController: {fileID: 22100000, guid: e2c652ba9439252489f019bc8aba223c, type: 2}
   equippedPrefabObject: {fileID: 7669441527703653328, guid: 8b79bc93c258cac48b28e765d0697ab7,
     type: 3}

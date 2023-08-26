@@ -11,6 +11,7 @@ namespace RPG.Combat
     public class EquippablePickup : MonoBehaviour, IRaycastable
     {
         [SerializeField] private Weapon pickUpEquippable = null;
+        //[SerializeField] private GameObject pickUpButtonUI = null;
         [SerializeField] float healthToRestore = 0;
         [SerializeField] private float respawnTime = 5f;
         
@@ -19,12 +20,18 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
+            /*
             Debug.Log("Hit Pick Me UP");
             if (other.gameObject.tag == "Player")
             {
-                //PickUp(other.gameObject);
+                pickUpButtonUI.SetActive(true);
+                if (GetComponent<InputActions>().InteractWithComponet())
+                {
+                    PickUp(other.gameObject);
+                }
+                
             }
-
+            */
 
         }
 
@@ -76,7 +83,10 @@ namespace RPG.Combat
 
         public bool HandleRaycast(PlayerController callingController)
         {
-            if (GetComponent<InputActions>().InteractWithComponet())
+            //button pop up
+            //
+
+            if (GetComponent<InputActions>().MovmentControl())
             {
                 PickUp(callingController.gameObject);
             }

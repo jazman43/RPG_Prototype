@@ -27,6 +27,7 @@ namespace RPG.Progression
 
         private void Start()
         {
+            
             currentLevel.ForceInit();
         }
 
@@ -66,6 +67,7 @@ namespace RPG.Progression
 
         private float GetBaseStat(Stats stats)
         {
+            
             return progression.GetStat(stats, characterClass, GetLevel());
         }
 

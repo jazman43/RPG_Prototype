@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f40a214425870b48ab4ddf3b8b26a6f, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: f5f145bd-6f07-41e1-b421-0a5c94e1a652
+  displayName: Sword
+  description: 'Basic farmers Sword
+
+'
+  icon: {fileID: 21300000, guid: e91fc63fcd9bb1c4abf7ffdc0848a328, type: 3}
+  pickup: {fileID: 5547812115555899506, guid: d3839777af7f8424893dc00dbd0cab57, type: 3}
+  stackable: 0
+  price: 0
+  category: 2
+  allowedEquipLocation: 5
+  equipCondition:
+    and: []
   overrideController: {fileID: 22100000, guid: e2c652ba9439252489f019bc8aba223c, type: 2}
   equippedPrefabObject: {fileID: 2498081456936127131, guid: 16262adf8a0a6554281186e7839ff94d,
     type: 3}

@@ -54,6 +54,7 @@ namespace RPG.SceneManagement
             SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
 
             PlayerController playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            Debug.Log(playerController);
             playerController.enabled = false;
 
             yield return fader.FadeOut(fadeOutTime);
@@ -66,10 +67,10 @@ namespace RPG.SceneManagement
             newPlayerController.enabled = false;
 
             Debug.Log("Travaling...");
-            if(sceneIndex > 0)
-            {
-                savingWrapper.LoadGameState();
-            }
+            
+            
+            savingWrapper.LoadGameState();
+            
             
 
             Portal otherPortal = GetOtherPortal();

@@ -1,10 +1,13 @@
 using UnityEngine;
 using RPG.Attributes;
+using RPG.Inventories;
+using RPG.Progression;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName ="Weapon", menuName = "RPG_UnNamed_Project/make new Weapon", order =0)]
-    public class Weapon : ScriptableObject
+    [CreateAssetMenu(fileName ="Weapon", menuName = "Jareds/make new Weapon", order =0)]
+    public class Weapon : EquipableItem, IModProvider
     {
         [SerializeField] private AnimatorOverrideController overrideController = null;
         [SerializeField] private OnWeaponEquipment equippedPrefabObject = null;
@@ -100,6 +103,22 @@ namespace RPG.Combat
             }
 
             return handTran;
+        }
+
+        public IEnumerable<float> GetAdditiveMod(Stats stats)
+        {
+            if (stats == Stats.Damage)
+            {
+                yield return damageToDo;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageMod(Stats stats)
+        {
+            if (stats == Stats.Damage)
+            {
+                yield return percentageBonus;
+            }
         }
     }
 }

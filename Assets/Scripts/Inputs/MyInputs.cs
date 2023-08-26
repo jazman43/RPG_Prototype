@@ -73,6 +73,51 @@ namespace RPG.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShowUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""4dd12b66-1591-444a-9f4f-5a514dd15157"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionBar1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3874487-fab6-4df7-93f8-3d0df4e775fb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionBar2"",
+                    ""type"": ""Button"",
+                    ""id"": ""37385fd1-0621-444b-8b41-254c3cf81202"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionBar3"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd68c828-2abb-461c-abf8-b40935998542"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionBar4"",
+                    ""type"": ""Button"",
+                    ""id"": ""5239ce08-21b1-42d8-9a24-c67c7710a68f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -183,6 +228,61 @@ namespace RPG.Inputs
                     ""processors"": """",
                     ""groups"": ""KeyBoard & mouse"",
                     ""action"": ""TEST_LOAD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18ebf6b7-f766-4d9b-b4db-f0d1b0a38cf7"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ShowUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3861a4fe-8cef-48ba-a82b-97d7211cc80f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ActionBar1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9559939-64be-448c-97ad-3d621e5ec64c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ActionBar2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4613594d-c90a-4f96-98ae-7fae87008a62"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ActionBar3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74ccbdde-5ecc-460c-a174-9bc2cb6c7ea1"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ActionBar4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -329,7 +429,7 @@ namespace RPG.Inputs
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": ""InvertVector2(invertX=false),StickDeadzone,ScaleVector2(x=300,y=300)"",
-                    ""groups"": ""GamePad"",
+                    ""groups"": """",
                     ""action"": ""CamraMovment"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -495,6 +595,11 @@ namespace RPG.Inputs
             m_PlayerActions_mousePos = m_PlayerActions.FindAction("mousePos", throwIfNotFound: true);
             m_PlayerActions_TEST_SAVE = m_PlayerActions.FindAction("TEST_SAVE", throwIfNotFound: true);
             m_PlayerActions_TEST_LOAD = m_PlayerActions.FindAction("TEST_LOAD", throwIfNotFound: true);
+            m_PlayerActions_ShowUI = m_PlayerActions.FindAction("ShowUI", throwIfNotFound: true);
+            m_PlayerActions_ActionBar1 = m_PlayerActions.FindAction("ActionBar1", throwIfNotFound: true);
+            m_PlayerActions_ActionBar2 = m_PlayerActions.FindAction("ActionBar2", throwIfNotFound: true);
+            m_PlayerActions_ActionBar3 = m_PlayerActions.FindAction("ActionBar3", throwIfNotFound: true);
+            m_PlayerActions_ActionBar4 = m_PlayerActions.FindAction("ActionBar4", throwIfNotFound: true);
             // PlayerActionsTheirdPerson
             m_PlayerActionsTheirdPerson = asset.FindActionMap("PlayerActionsTheirdPerson", throwIfNotFound: true);
             m_PlayerActionsTheirdPerson_Movement = m_PlayerActionsTheirdPerson.FindAction("Movement", throwIfNotFound: true);
@@ -570,6 +675,11 @@ namespace RPG.Inputs
         private readonly InputAction m_PlayerActions_mousePos;
         private readonly InputAction m_PlayerActions_TEST_SAVE;
         private readonly InputAction m_PlayerActions_TEST_LOAD;
+        private readonly InputAction m_PlayerActions_ShowUI;
+        private readonly InputAction m_PlayerActions_ActionBar1;
+        private readonly InputAction m_PlayerActions_ActionBar2;
+        private readonly InputAction m_PlayerActions_ActionBar3;
+        private readonly InputAction m_PlayerActions_ActionBar4;
         public struct PlayerActionsActions
         {
             private @MyInputs m_Wrapper;
@@ -579,6 +689,11 @@ namespace RPG.Inputs
             public InputAction @mousePos => m_Wrapper.m_PlayerActions_mousePos;
             public InputAction @TEST_SAVE => m_Wrapper.m_PlayerActions_TEST_SAVE;
             public InputAction @TEST_LOAD => m_Wrapper.m_PlayerActions_TEST_LOAD;
+            public InputAction @ShowUI => m_Wrapper.m_PlayerActions_ShowUI;
+            public InputAction @ActionBar1 => m_Wrapper.m_PlayerActions_ActionBar1;
+            public InputAction @ActionBar2 => m_Wrapper.m_PlayerActions_ActionBar2;
+            public InputAction @ActionBar3 => m_Wrapper.m_PlayerActions_ActionBar3;
+            public InputAction @ActionBar4 => m_Wrapper.m_PlayerActions_ActionBar4;
             public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -603,6 +718,21 @@ namespace RPG.Inputs
                 @TEST_LOAD.started += instance.OnTEST_LOAD;
                 @TEST_LOAD.performed += instance.OnTEST_LOAD;
                 @TEST_LOAD.canceled += instance.OnTEST_LOAD;
+                @ShowUI.started += instance.OnShowUI;
+                @ShowUI.performed += instance.OnShowUI;
+                @ShowUI.canceled += instance.OnShowUI;
+                @ActionBar1.started += instance.OnActionBar1;
+                @ActionBar1.performed += instance.OnActionBar1;
+                @ActionBar1.canceled += instance.OnActionBar1;
+                @ActionBar2.started += instance.OnActionBar2;
+                @ActionBar2.performed += instance.OnActionBar2;
+                @ActionBar2.canceled += instance.OnActionBar2;
+                @ActionBar3.started += instance.OnActionBar3;
+                @ActionBar3.performed += instance.OnActionBar3;
+                @ActionBar3.canceled += instance.OnActionBar3;
+                @ActionBar4.started += instance.OnActionBar4;
+                @ActionBar4.performed += instance.OnActionBar4;
+                @ActionBar4.canceled += instance.OnActionBar4;
             }
 
             private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -622,6 +752,21 @@ namespace RPG.Inputs
                 @TEST_LOAD.started -= instance.OnTEST_LOAD;
                 @TEST_LOAD.performed -= instance.OnTEST_LOAD;
                 @TEST_LOAD.canceled -= instance.OnTEST_LOAD;
+                @ShowUI.started -= instance.OnShowUI;
+                @ShowUI.performed -= instance.OnShowUI;
+                @ShowUI.canceled -= instance.OnShowUI;
+                @ActionBar1.started -= instance.OnActionBar1;
+                @ActionBar1.performed -= instance.OnActionBar1;
+                @ActionBar1.canceled -= instance.OnActionBar1;
+                @ActionBar2.started -= instance.OnActionBar2;
+                @ActionBar2.performed -= instance.OnActionBar2;
+                @ActionBar2.canceled -= instance.OnActionBar2;
+                @ActionBar3.started -= instance.OnActionBar3;
+                @ActionBar3.performed -= instance.OnActionBar3;
+                @ActionBar3.canceled -= instance.OnActionBar3;
+                @ActionBar4.started -= instance.OnActionBar4;
+                @ActionBar4.performed -= instance.OnActionBar4;
+                @ActionBar4.canceled -= instance.OnActionBar4;
             }
 
             public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -758,6 +903,11 @@ namespace RPG.Inputs
             void OnMousePos(InputAction.CallbackContext context);
             void OnTEST_SAVE(InputAction.CallbackContext context);
             void OnTEST_LOAD(InputAction.CallbackContext context);
+            void OnShowUI(InputAction.CallbackContext context);
+            void OnActionBar1(InputAction.CallbackContext context);
+            void OnActionBar2(InputAction.CallbackContext context);
+            void OnActionBar3(InputAction.CallbackContext context);
+            void OnActionBar4(InputAction.CallbackContext context);
         }
         public interface IPlayerActionsTheirdPersonActions
         {

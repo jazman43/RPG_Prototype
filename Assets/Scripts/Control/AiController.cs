@@ -65,6 +65,7 @@ namespace RPG.Control
                 return;
             }
 
+            
             if (IsAggrevated() && fighter.CanAttack(player))
             {
                 

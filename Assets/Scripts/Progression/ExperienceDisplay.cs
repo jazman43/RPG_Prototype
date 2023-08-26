@@ -32,11 +32,7 @@ namespace RPG.Progression
             
         }
 
-        private void Start()
-        {
-            
-        }
-
+       
         private void Update()
         {
             

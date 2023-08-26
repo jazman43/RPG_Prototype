@@ -6,6 +6,9 @@
         Move,
         OutOfBounds,
         UI,
-        PickUp
+        PickUp,
+        Dialogue,
+        Shop,        
+        FullPickup
     }
 }

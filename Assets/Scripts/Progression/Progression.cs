@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RPG.Progression
 {
-    [CreateAssetMenu(fileName = "Progression", menuName = "Stats/ New Progression", order = 0)]
+    [CreateAssetMenu(fileName = "Progression", menuName = "Jareds/Stats/ New Progression", order = 0)]
     public class Progression : ScriptableObject
     {
         [SerializeField] private ProgressionCharacterClass[] characterClasses = null;
