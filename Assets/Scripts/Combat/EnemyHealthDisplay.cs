@@ -11,7 +11,7 @@ namespace RPG.Combat
     public class EnemyHealthDisplay : MonoBehaviour
     {
 
-        Fighter fighter;
+        PlayerFighter fighter;
         BaseStats stats;
         [SerializeField] private GameObject healthUI = null;
         [SerializeField] private GameObject textHealthUI = null;
@@ -24,7 +24,7 @@ namespace RPG.Combat
 
         private void Awake()
         {
-            fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
+            fighter = GameObject.FindWithTag("Player").GetComponent<PlayerFighter>();
             
             
             
@@ -40,6 +40,7 @@ namespace RPG.Combat
 
         private void Update()
         {
+            Debug.Log(fighter);
             if(fighter.GetTarget() == null)
             {
                 healthUI.SetActive(false);

@@ -39,6 +39,7 @@ namespace RPG.Dialogue
             currentNode = null;
             isChoosing = false;
             currentConversant = null;
+            Cursor.lockState = CursorLockMode.Locked;
             onConversationUpdated();
         }
 

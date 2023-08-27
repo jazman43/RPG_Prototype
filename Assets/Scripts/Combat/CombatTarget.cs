@@ -24,7 +24,7 @@ namespace RPG.Combat
 
             if (GetComponent<InputActions>().CharacterBasicAttack())
             {
-                callingController.GetComponent<Fighter>().Attack(gameObject);
+                callingController.GetComponent<PlayerFighter>().Attack(gameObject);
             }
 
             return true;

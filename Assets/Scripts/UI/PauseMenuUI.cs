@@ -15,7 +15,9 @@ namespace RPG.UI
         private void OnEnable()
         {
             Debug.Log("PauseGame!");
+            
             if (playerController == null) return;
+            Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
             playerController.enabled = false;
         }
@@ -23,7 +25,9 @@ namespace RPG.UI
         private void OnDisable()
         {
             Debug.Log("UNPauseGame!");
+            
             if (playerController == null) return;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             playerController.enabled = true;
         }

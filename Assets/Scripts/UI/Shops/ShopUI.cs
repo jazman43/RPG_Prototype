@@ -66,6 +66,7 @@ namespace RPG.UI.Shops
 
         private void RefreshUI()
         {
+            Cursor.lockState = CursorLockMode.Confined;
             foreach (Transform child in listRoot)
             {
                 Destroy(child.gameObject);
@@ -102,6 +103,7 @@ namespace RPG.UI.Shops
         public void Close()
         {
             shopper.SetActiveShop(null);
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void ConfirmTransaction()

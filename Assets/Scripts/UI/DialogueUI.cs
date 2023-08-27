@@ -38,6 +38,7 @@ namespace RPG.UI
             {
                 return;
             }
+            Cursor.lockState = CursorLockMode.Confined;
             conversantName.text = playerConversant.GetCurrentConversantName();
             AIResponse.SetActive(!playerConversant.IsChoosing());
             choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());

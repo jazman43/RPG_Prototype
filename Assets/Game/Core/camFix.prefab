@@ -526,7 +526,7 @@ Transform:
   - {fileID: 975512001731889052}
   - {fileID: 576323333587771738}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7348559202806586826
 MonoBehaviour:
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerIndex: -1
   AutoEnableInputs: 1
-  XYAxis: {fileID: 8914359912223713283, guid: 2b9f4021be931f64a92afb9280a57ef1, type: 3}
+  XYAxis: {fileID: 8801943108010007972, guid: 2b9f4021be931f64a92afb9280a57ef1, type: 3}
   ZAxis: {fileID: 0}
 --- !u!114 &9056104909619547387
 MonoBehaviour:

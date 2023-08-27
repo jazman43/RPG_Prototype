@@ -34,8 +34,8 @@ namespace RPG.Control
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
 
 
-        private List<CombatTarget> targets = new List<CombatTarget>();
-        //private Camera camera;
+        
+        private Camera camera;
         
 
         private void Awake()
@@ -47,7 +47,8 @@ namespace RPG.Control
 
         private void Start()
         {
-            //camera = Camera.main;
+            camera = Camera.main;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
@@ -66,6 +67,8 @@ namespace RPG.Control
 
             UseAbilities();
 
+            
+            GetComponent<PlayerFighter>().RemoveFoundCombatTagets();
             if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
 
@@ -160,19 +163,36 @@ namespace RPG.Control
 
         private bool InteractWithMovement()
         {
-            Vector3 target;
-            bool hasHit = RaycastNavMesh(out target);
-            if (hasHit)
+            if(GetComponent<CharacterController>() != null)
             {
-                if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+                Vector3 moveControl = new Vector3(
+                    input.CharatcerMovement().x,
+                    0.0f,
+                    input.CharatcerMovement().y);
 
-                if (input.MovmentControl())
-                {
-                    GetComponent<Mover>().StartMoveAction(target, 1f);
-                }
-                SetCursors(Cursors.Move);
+
+                GetComponent<PlayerMover>().Movement(moveControl,input.CharacterSprint(),camera);
+                GetComponent<PlayerMover>().Gravity();
                 return true;
             }
+            else
+            {
+                Vector3 target;
+                bool hasHit = RaycastNavMesh(out target);
+                if (hasHit)
+                {
+                    if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+
+                    if (input.MovmentControl())
+                    {
+                        GetComponent<Mover>().StartMoveAction(target, 1f);
+                    }
+                    SetCursors(Cursors.Move);
+                    return true;
+                }
+            }            
+            
+            
             return false;
         }
 
@@ -221,48 +241,7 @@ namespace RPG.Control
             return cursorMappings[0];
         }
 
-        /*
-        private void GetTargets()
-        {
-            if (targets.Count == 0) return;
-
-            CombatTarget closetTarget = null;
-            float closestTargetDis = Mathf.Infinity;
-
-
-            foreach(CombatTarget target in targets)
-            {
-                Vector2 viewPos = camera.WorldToViewportPoint(target.transform.position);
-
-
-                if (!target.GetComponentInChildren<Renderer>().isVisible) continue;
-
-                Vector2 toCenter = viewPos - new Vector2(0.5f, 0.5f);
-                if(toCenter.sqrMagnitude < closestTargetDis)
-                {
-                    closetTarget = target;
-                    closestTargetDis = toCenter.sqrMagnitude;
-                }
-            }
-
-            
-
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (!other.TryGetComponent<CombatTarget>(out CombatTarget target)) return;
-
-            targets.Add(target);
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (!other.TryGetComponent<CombatTarget>(out CombatTarget target)) return;
-
-            targets.Remove(target);
-        }
-        */
+        
     }
 }
 
