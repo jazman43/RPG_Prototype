@@ -66,7 +66,7 @@ namespace RPG.Attributes
 
             float ranDamage = UnityEngine.Random.Range(damage - 2, damage + 2);
             currentHealth.value = Mathf.Max(currentHealth.value - ranDamage, 0);
-            Debug.Log(currentHealth + "< Health Damage >" + ranDamage + " in " + instigator);
+            //Debug.Log(currentHealth + "< Health Damage >" + ranDamage + " in " + instigator);
             if (IsDead()) {
                 onDie.Invoke();                
                 GiveXP(instigator);

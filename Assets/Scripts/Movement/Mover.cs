@@ -36,7 +36,7 @@ namespace RPG.Movement
 
         private void Update()
         {
-            playerControler.enabled = !health.IsDead();
+            //playerControler.enabled = !health.IsDead();
             UpDateAnimator();
         }
 

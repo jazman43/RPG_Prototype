@@ -15,12 +15,12 @@ namespace RPG.Dialogue
 
        
         
-
+        /*
         public Cursors GetCursorType()
         {
             return Cursors.Dialogue;
         }
-
+        */
         public bool HandleRaycast(PlayerController callingController)
         {
             if (dialogue == null)
@@ -31,7 +31,7 @@ namespace RPG.Dialogue
             Health health = GetComponent<Health>();
             if (health && health.IsDead()) return false;
 
-            if (FindObjectOfType<InputActions>().MovmentControl())
+            if (FindObjectOfType<InputActions>().InteractWithComponet())
             {
                 callingController.GetComponent<PlayerConversant>().StartDialogue(this, dialogue);
             }

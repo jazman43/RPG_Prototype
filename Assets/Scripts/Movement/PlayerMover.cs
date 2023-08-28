@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using RPG.Saving;
 
 namespace RPG.Movement
 {
-    public class PlayerMover : MonoBehaviour
+    public class PlayerMover : MonoBehaviour, ISaveable
     {
         /*
             star with basic movement with a sprint 
@@ -34,7 +34,7 @@ namespace RPG.Movement
         private void Update()
         {
             isGrounded = controller.isGrounded;
-            Debug.Log(isGrounded);
+            //Debug.Log(isGrounded);
         }
 
         public void Movement(Vector3 moveControl, bool isInSprint, Camera camera)
@@ -82,6 +82,18 @@ namespace RPG.Movement
 
             yPosition.y += griavity * Time.deltaTime;
             controller.Move(yPosition * Time.deltaTime);
+        }
+
+        public object CaptureState()
+        {
+            return new SerializableVector3(transform.position);
+        }
+
+        public void RestoreState(object state)
+        {
+            SerializableVector3 position = (SerializableVector3)state;            
+            transform.position = position.ToVector();
+            
         }
     }
 }

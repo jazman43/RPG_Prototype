@@ -75,18 +75,20 @@ namespace RPG.Combat
                 game.gameObject.SetActive(false);
             }
         }
-
+        
+        /*
         public Cursors GetCursorType()
         {
             return Cursors.PickUp;
         }
+        */
 
         public bool HandleRaycast(PlayerController callingController)
         {
             //button pop up
             //
 
-            if (GetComponent<InputActions>().MovmentControl())
+            if (GetComponent<InputActions>().InteractWithComponet())
             {
                 PickUp(callingController.gameObject);
             }

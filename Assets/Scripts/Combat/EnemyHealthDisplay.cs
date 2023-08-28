@@ -40,7 +40,7 @@ namespace RPG.Combat
 
         private void Update()
         {
-            Debug.Log(fighter);
+            //Debug.Log(fighter);
             if(fighter.GetTarget() == null)
             {
                 healthUI.SetActive(false);

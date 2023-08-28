@@ -5,6 +5,8 @@ using RPG.Shops;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using RPG.core;
+
 
 namespace RPG.UI.Shops
 {
@@ -22,10 +24,12 @@ namespace RPG.UI.Shops
 
         Color originalTotalTextColor;
 
+        EnableDisableCamMovment camMovment;
 
         private void Awake()
         {
             shopper = GameObject.FindGameObjectWithTag("Player").GetComponent<Shopper>();
+            camMovment = GameObject.FindGameObjectWithTag("Core").GetComponent<EnableDisableCamMovment>();
         }
 
         void Start()
@@ -58,7 +62,8 @@ namespace RPG.UI.Shops
 
             if (currentShop == null) return;
             shopName.text = currentShop.GetShopName();
-
+            Cursor.lockState = CursorLockMode.Confined;
+            camMovment.EnableDisable();
             currentShop.onChange += RefreshUI;
 
             RefreshUI();
@@ -66,7 +71,7 @@ namespace RPG.UI.Shops
 
         private void RefreshUI()
         {
-            Cursor.lockState = CursorLockMode.Confined;
+            
             foreach (Transform child in listRoot)
             {
                 Destroy(child.gameObject);
@@ -103,6 +108,7 @@ namespace RPG.UI.Shops
         public void Close()
         {
             shopper.SetActiveShop(null);
+            camMovment.EnableDisable();
             Cursor.lockState = CursorLockMode.Locked;
         }
 

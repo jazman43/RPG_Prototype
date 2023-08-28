@@ -67,10 +67,10 @@ namespace RPG.Control
 
             UseAbilities();
 
+
+            InteractWithMovement();
+            InteractWithComponent();
             
-            GetComponent<PlayerFighter>().RemoveFoundCombatTagets();
-            if (InteractWithComponent()) return;
-            if (InteractWithMovement()) return;
 
             SetCursors(Cursors.OutOfBounds);
 
@@ -127,7 +127,7 @@ namespace RPG.Control
 
         }
 
-        private bool InteractWithComponent()
+        private void InteractWithComponent()
         {
             RaycastHit[] hits = RaycastAllSorted();
 
@@ -139,12 +139,12 @@ namespace RPG.Control
                 {
                     if (raycastable.HandleRaycast(this))
                     {
-                        SetCursors(raycastable.GetCursorType());
-                        return true;
+                        //SetCursors(raycastable.GetCursorType());
+                        
                     }
                 }
             }
-            return false;
+            
 
         }
 
@@ -161,7 +161,7 @@ namespace RPG.Control
             return hits;
         }
 
-        private bool InteractWithMovement()
+        private void InteractWithMovement()
         {
             if(GetComponent<CharacterController>() != null)
             {
@@ -173,8 +173,9 @@ namespace RPG.Control
 
                 GetComponent<PlayerMover>().Movement(moveControl,input.CharacterSprint(),camera);
                 GetComponent<PlayerMover>().Gravity();
-                return true;
+                
             }
+            /*
             else
             {
                 Vector3 target;
@@ -192,10 +193,10 @@ namespace RPG.Control
                 }
             }            
             
+            */
             
-            return false;
         }
-
+        /*
         private bool RaycastNavMesh(out Vector3 target)
         {
             target = new Vector3();
@@ -213,7 +214,7 @@ namespace RPG.Control
 
             return true;
         }
-
+        */
 
         public static Ray GetMouseRay()
         {

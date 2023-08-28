@@ -7,8 +7,9 @@ using RPG.Control;
 namespace RPG.Combat
 {
     [RequireComponent(typeof(Health))]
-    public class CombatTarget : MonoBehaviour, IRaycastable
+    public class CombatTarget : MonoBehaviour
     {
+        /*
         public Cursors GetCursorType()
         {
             return Cursors.Attack;
@@ -17,7 +18,11 @@ namespace RPG.Combat
         public bool HandleRaycast(PlayerController callingController)
         {
             if (!enabled) return false;
-            if (!callingController.GetComponent<Fighter>().CanAttack(gameObject))
+
+            Debug.Log(callingController.GetComponent<PlayerFighter>().CanAttack(gameObject) + " Can Attack?");
+            
+            
+            if (!callingController.GetComponent<PlayerFighter>().CanAttack(gameObject))
             {
                 return false;
             }
@@ -26,9 +31,10 @@ namespace RPG.Combat
             {
                 callingController.GetComponent<PlayerFighter>().Attack(gameObject);
             }
-
+            
             return true;
         }
+        */
     }
 }
 

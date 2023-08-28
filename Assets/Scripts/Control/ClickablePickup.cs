@@ -19,6 +19,7 @@ namespace RPG.Control
             input = FindObjectOfType<InputActions>();
         }
 
+        /*
         public Cursors GetCursorType()
         {
             if (pickup.CanBePickedUp())
@@ -30,10 +31,11 @@ namespace RPG.Control
                 return Cursors.FullPickup;
             }
         }
+        */
 
         public bool HandleRaycast(PlayerController callingController)
         {
-            if (input.MovmentControl())
+            if (input.InteractWithComponet())
             {
                 pickup.PickupItem();
             }

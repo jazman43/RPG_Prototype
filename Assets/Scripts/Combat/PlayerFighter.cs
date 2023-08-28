@@ -6,6 +6,8 @@ using System;
 using RPG.core;
 using Jareds.Utils;
 using RPG.Inventories;
+using RPG.Progression;
+using RPG.Inputs;
 
 namespace RPG.Combat
 {
@@ -32,6 +34,13 @@ namespace RPG.Combat
 
         [SerializeField] private List<Health> targets = new List<Health>();
 
+        [Header("Animation")]
+        [SerializeField] private string punchAnimation = "punch";
+        [SerializeField] private string stopAttack = "stopAttack";
+
+        private float timeSinceLastAttack = Mathf.Infinity;
+
+
         Camera camera;
         Health combatTarget;
         ActionScheduler actionScheduler;
@@ -39,8 +48,7 @@ namespace RPG.Combat
         Equipment equipment;
         LazyJaredValue<OnWeaponEquipment> currentWeapon;
         Animator animator;
-
-
+        
 
         private void Awake()
         {
@@ -64,7 +72,20 @@ namespace RPG.Combat
 
         private void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
+
+
+            if (GetComponent<InputActions>().CharacterBasicAttack())
+            {
+                if (combatTarget != null && CanAttack(combatTarget.gameObject))
+                {
+                    AttackBehavior();
+                }
+            }
+            
             GetClosetedTarget();
+
+            ClearTargetsList();
         }
 
         private OnWeaponEquipment SetupDefaultWeapon()
@@ -80,10 +101,72 @@ namespace RPG.Combat
             combatTarget = gameObject.GetComponent<Health>();
         }
 
+        public bool CanAttack(GameObject target)
+        {
+            if (target == null) return false;
+           
+
+            //get attack range check if player is faceing then attack
+
+
+            if (!GetIsInRange(target.transform)) return false;
+
+            /*
+            
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
+            */
+            //is target in front of us?
+
+
+            Vector3 directionToTarget = target.transform.position - transform.position;
+            directionToTarget.y = 0;
+
+            if (Vector3.Dot(directionToTarget.normalized, transform.forward) <= 0)
+            {
+                return false;
+            }
+
+
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, directionToTarget, out hit, currentWeaponCofig.GetWeaponRange()))
+            {
+                Debug.Log(hit + " object hit");
+                if (hit.collider.gameObject == target)
+                {
+                    Health targetToTest = target.GetComponent<Health>();
+
+                    return targetToTest != null && !targetToTest.IsDead();
+                }
+            }
+            
+            return false;
+
+        }
+
+
+        private void AttackBehavior()
+        {            
+            if (timeSinceLastAttack > timeBetweenAttacks)
+            {
+                TriggerAttack();
+                timeSinceLastAttack = 0;
+
+            }
+        }
+
+        private void TriggerAttack()
+        {
+            animator.ResetTrigger(stopAttack);
+            animator.SetTrigger(punchAnimation);
+        }
+
         //ray sphere 
 
         private List<Health> FindCombatTargets()
         {
+            
+
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, sphereCastRadius, sphereCastDirection);
 
            
@@ -97,33 +180,14 @@ namespace RPG.Combat
                 if (hitObject != null && !targets.Contains(hitObject) && hitObject.tag != "Player")
                 {
                     targets.Add(hitObject);
-                    return targets;
                 }
             }
-            return null;
+            return targets;
         }
 
-        public void RemoveFoundCombatTagets()
+        private void ClearTargetsList()
         {
-            List<Health> targetsToRemove = new List<Health>();
-
-            foreach (Health target in targets)
-            {
-                float distanceToTarget = Vector3.Distance(
-                    transform.position,
-                    target.transform.position);
-                
-                //if i try and remove the target directly i get an error
-                if(distanceToTarget > sphereCastRadius)
-                {
-                    targetsToRemove.Add(target);
-                }
-            }
-
-            foreach (Health targetToRemove in targetsToRemove)
-            {
-                targets.Remove(targetToRemove);
-            }
+            targets.Clear();
         }
 
         private Health GetClosetedTarget()
@@ -196,10 +260,48 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            //animator.ResetTrigger(punchAnimation);
-            //animator.SetTrigger(stopAttack);
+            animator.ResetTrigger(punchAnimation);
+            animator.SetTrigger(stopAttack);
             combatTarget = null;
         }
+
+        //animation event trigger
+        void Hit()
+        {
+            if (combatTarget == null) return;
+
+            float damage = GetComponent<BaseStats>().GetStat(Stats.Damage);
+            BaseStats targetBaseStats = combatTarget.GetComponent<BaseStats>();
+            if (targetBaseStats != null)
+            {
+                float defence = targetBaseStats.GetStat(Stats.defence);
+
+                damage /= 1 + defence / damage;
+            }
+
+
+            if (currentWeapon.value != null)
+            {
+                currentWeapon.value.OnHit();
+            }
+
+
+            if (currentWeaponCofig.HasProjectile())
+            {
+                currentWeaponCofig.SpawnProjectile(rightHandTransform, leftHandTransform, combatTarget, gameObject, damage);
+            }
+            else
+            {
+                Debug.Log("player Doing damege to " + combatTarget);
+                combatTarget.TakeDamage(gameObject, damage);
+            }
+        }
+
+        void stopAnimation()
+        {
+            Cancel();
+        }
+
     }
 }
 

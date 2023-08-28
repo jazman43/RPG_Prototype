@@ -85,7 +85,7 @@ namespace RPG.Combat
             if (!GetIsInRange(combatTarget.transform))
             {
                 GetComponent<Mover>().MoveTo(combatTarget.transform.position, 1f);
-                Debug.Log("moving to Target");
+                Debug.Log("moving to Target " + combatTarget);
             }
             else 
             {
@@ -225,8 +225,7 @@ namespace RPG.Combat
                 currentWeaponCofig.SpawnProjectile(rightHandTransform, leftHandTransform, combatTarget, gameObject, damage);
             }
             else
-            {
-                
+            {                
                 combatTarget.TakeDamage(gameObject, damage);
             }           
         }
@@ -235,8 +234,8 @@ namespace RPG.Combat
             Cancel();
         }
 
-        
-        
+
+
     }
 }
 

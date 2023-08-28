@@ -231,14 +231,16 @@ namespace RPG.Shops
             }
         }
 
+
+        /*
         public Cursors GetCursorType()
         {
             return Cursors.Shop;
         }
-
+        */
         public bool HandleRaycast(PlayerController callingController)
         {
-            if (GetComponent<InputActions>().MovmentControl())
+            if (GetComponent<InputActions>().InteractWithComponet())
             {
                 callingController.GetComponent<Shopper>().SetActiveShop(this);
             }
