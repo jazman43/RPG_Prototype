@@ -9,6 +9,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using RPG.Inventories;
+using RPG.UI.InteractableUI;
+
+
 
 namespace RPG.Control
 {

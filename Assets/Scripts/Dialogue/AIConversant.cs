@@ -4,7 +4,7 @@ using RPG.Attributes;
 using RPG.Control;
 using UnityEngine;
 using RPG.Inputs;
-
+using RPG.UI.InteractableUI;
 
 namespace RPG.Dialogue
 {
@@ -30,6 +30,8 @@ namespace RPG.Dialogue
 
             Health health = GetComponent<Health>();
             if (health && health.IsDead()) return false;
+
+            GetComponentInChildren<InteractableTextPopUp>().SpawnInteractableText();
 
             if (FindObjectOfType<InputActions>().InteractWithComponet())
             {

@@ -64,7 +64,8 @@ namespace RPG.Control
             {
                 return;
             }
-
+            //just for npc we might want a debug log here in case we accidantly forget the fighter on an enemy
+            if (fighter == null) return;
             
             if (IsAggrevated() && fighter.CanAttack(player))
             {

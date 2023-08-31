@@ -7,7 +7,7 @@ using RPG.Control;
 using RPG.Progression;
 using UnityEngine;
 using RPG.Inputs;
-
+using RPG.UI.InteractableUI;
 
 namespace RPG.Shops
 {
@@ -240,6 +240,8 @@ namespace RPG.Shops
         */
         public bool HandleRaycast(PlayerController callingController)
         {
+            GetComponentInChildren<InteractableTextPopUp>().SpawnInteractableText();
+
             if (GetComponent<InputActions>().InteractWithComponet())
             {
                 callingController.GetComponent<Shopper>().SetActiveShop(this);

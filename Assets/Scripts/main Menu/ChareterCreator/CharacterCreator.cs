@@ -1,4 +1,5 @@
 using RPG.Saving;
+using RPG.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,14 +60,69 @@ namespace RPG.MainMenu.ChareterCreator
 
         private bool isLoaded = false;
 
+        private static bool hasLoaded = false;
+
+        private Color hairColor;
+
         #region Init and Helpers
         // Start is called before the first frame update
         void Start()
         {
-            if (false == isLoaded)
+            if (!isLoaded && !hasLoaded)
             {
                 InitBody();
+                Debug.Log(isLoaded);
             }
+            Debug.Log(hasLoaded);
+            if (hasLoaded)
+            {
+                String genderString = PlayerPrefs.GetString("gender");
+                int headindex = PlayerPrefs.GetInt("head");
+                int eyeBrowIndex = PlayerPrefs.GetInt("eyebrows");
+                int hairIndex = PlayerPrefs.GetInt("hair");
+                int facialHairIndex = PlayerPrefs.GetInt("facialhair");
+
+
+                InitBody();
+
+                EnableCharacter();
+
+
+                Debug.Log(PlayerPrefs.GetInt("head"));
+                if (genderString == Gender.Male.ToString())
+                {
+                    SetGender("Gender (Male)");
+                }
+                else
+                {
+                    SetGender("Gender (Female)");
+                }
+                
+                
+                ActivateItem((int)BodyParts.HeadAllElements, headindex);
+                
+                ActivateItem((int)BodyParts.Eyebrow, eyeBrowIndex);
+                
+                ActivateItem((int)BodyParts.All_Hair, hairIndex);
+                
+                ActivateItem((int)BodyParts.FacialHair, facialHairIndex);
+
+                int skinColour = PlayerPrefs.GetInt("SkinColour");
+
+                SetSliderSkinColor(skinColour);
+
+                float red = PlayerPrefs.GetFloat("_Color_Hair Red");
+                float green = PlayerPrefs.GetFloat("_Color_Hair Green");
+                float blue = PlayerPrefs.GetFloat("_Color_Hair Bule");
+                
+
+
+                SetHairColor("_Color_Hair", new Color(red, green, blue));
+
+                hasLoaded = false;
+                return;
+            }
+
 
             EnableCharacter();
         }
@@ -164,6 +220,8 @@ namespace RPG.MainMenu.ChareterCreator
 
 
         }
+
+        
 
         Color ConvertColor(int r, int g, int b)
         {
@@ -267,6 +325,9 @@ namespace RPG.MainMenu.ChareterCreator
         public void SetHairColor(string name, Color color)
         {
             mat.SetColor("_Color_Hair", color);
+
+            hairColor = color;
+            
         }
 
         
@@ -331,8 +392,38 @@ namespace RPG.MainMenu.ChareterCreator
                     break;
                     
             }
+            PlayerPrefs.SetInt("SkinColour", i);
         }
 
+
+        public void InitSaveCharacter()
+        {
+            bool hasSaved = false;
+
+            if (!hasSaved)
+            {
+                hasSaved = true;
+                hasLoaded = hasSaved;                
+
+                PlayerPrefs.SetString("gender", gender.ToString());
+                PlayerPrefs.SetInt("head", equipped[(int)BodyParts.HeadAllElements]);
+                PlayerPrefs.SetInt("eyebrows", equipped[(int)BodyParts.Eyebrow]);
+                PlayerPrefs.SetInt("hair", equipped[(int)BodyParts.All_Hair]);
+                PlayerPrefs.SetInt("facialhair", equipped[(int)BodyParts.FacialHair]);
+
+                float red = hairColor.r;
+                float green = hairColor.g;
+                float blue = hairColor.b;
+
+
+
+                PlayerPrefs.SetFloat("_Color_Hair Red", red);
+                PlayerPrefs.SetFloat("_Color_Hair Green", green);
+                PlayerPrefs.SetFloat("_Color_Hair Bule", blue);
+
+                Debug.Log("has Saved");
+            }       
+        }
         #endregion
 
         #region Builders
@@ -517,6 +608,7 @@ namespace RPG.MainMenu.ChareterCreator
             data["eyebrows"] = equipped[(int)BodyParts.Eyebrow];
             data["hair"] = equipped[(int)BodyParts.All_Hair];
             data["facialhair"] = equipped[(int)BodyParts.FacialHair];
+            Debug.Log(data);
             return data;
         }
 
@@ -532,7 +624,7 @@ namespace RPG.MainMenu.ChareterCreator
 
             EnableCharacter();
 
-            //this part is stupid but lazy developers
+            
             if ((Gender)gd == Gender.Male)
             {
                 SetGender("Gender (Male)");

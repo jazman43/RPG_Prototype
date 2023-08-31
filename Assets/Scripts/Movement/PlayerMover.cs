@@ -55,6 +55,11 @@ namespace RPG.Movement
                 moveSpeed = walkSpeed;
             }
 
+            if(moveControl.magnitude <= 0.01f)
+            {
+                moveSpeed = 0;
+            }
+
             if(moveControl.magnitude >= 0.1f)
             {
                 float targetAngle = Mathf.Atan2(
@@ -77,7 +82,7 @@ namespace RPG.Movement
 
                 
             }
-            animator.SetFloat(animSpeed, moveControl.magnitude);
+            animator.SetFloat(animSpeed, moveSpeed);
             Debug.Log(moveControl.magnitude);
         }
 

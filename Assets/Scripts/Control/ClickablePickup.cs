@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using RPG.Inventories;
 using UnityEngine;
 using RPG.Inputs;
-
+using RPG.UI.InteractableUI;
 
 namespace RPG.Control
 {
@@ -35,6 +35,7 @@ namespace RPG.Control
 
         public bool HandleRaycast(PlayerController callingController)
         {
+            GetComponent<InteractableTextPopUp>().SpawnInteractableText();
             if (input.InteractWithComponet())
             {
                 pickup.PickupItem();
