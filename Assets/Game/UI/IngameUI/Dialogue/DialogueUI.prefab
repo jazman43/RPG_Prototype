@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0.392}
+  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0.6666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -380,7 +380,7 @@ MonoBehaviour:
   nextButton: {fileID: 5552077622577530578}
   AIResponse: {fileID: 1465714087980566059}
   choiceRoot: {fileID: 3376072331680149545}
-  choicePrefab: {fileID: 705563313665658858, guid: 269759b98e4670c4f9da2a37f9281197,
+  choicePrefab: {fileID: 3125740652620431587, guid: 61d982e81414e884d9291712103d1c14,
     type: 3}
   quitButton: {fileID: 5038433225554787488}
   conversantName: {fileID: 882695359148415499}
@@ -461,12 +461,12 @@ PrefabInstance:
     - target: {fileID: 6533659661822679937, guid: ea6d5c0e663acec42aa18a08707ed5c6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6533659661822679937, guid: ea6d5c0e663acec42aa18a08707ed5c6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6533659661822679937, guid: ea6d5c0e663acec42aa18a08707ed5c6,
         type: 3}

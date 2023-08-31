@@ -80,6 +80,7 @@ namespace RPG.SceneManagement
         private IEnumerator LoadFirstScene()
         {
             Fader fader = FindObjectOfType<Fader>();
+            Cursor.lockState = CursorLockMode.Locked;
             yield return fader.FadeOut(fadeOutTime);
             yield return SceneManager.LoadSceneAsync(firstLevelBuildIndex);
             yield return fader.FadeIn(fadeInTime);
@@ -88,8 +89,10 @@ namespace RPG.SceneManagement
         private IEnumerator LoadMenuScene()
         {
             Fader fader = FindObjectOfType<Fader>();
+            
             yield return fader.FadeOut(fadeOutTime);
             yield return SceneManager.LoadSceneAsync(menuLevelBuildIndex);
+            Cursor.lockState = CursorLockMode.Confined;
             yield return fader.FadeIn(fadeInTime);
         }
 

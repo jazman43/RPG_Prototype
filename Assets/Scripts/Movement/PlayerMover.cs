@@ -17,18 +17,23 @@ namespace RPG.Movement
         [SerializeField] private float turnSmoothTime = 0.1f;
 
 
+        [Header("Animation")]
+        [SerializeField] private string animSpeed = "forwardSpeed";
+
         private float moveSpeed = Mathf.Infinity;
-        private CharacterController controller;
+        
         private Vector3 yPosition;
         private float griavity = -9.81f;
         private bool isGrounded = true;
         private float turnSmoothVelocity;
-        
 
+        private CharacterController controller;
+        private Animator animator;
 
         private void Awake()
         {
             controller = GetComponent<CharacterController>();
+            animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -67,9 +72,13 @@ namespace RPG.Movement
                 Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
                 controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
+
+                
+
+                
             }
-
-
+            animator.SetFloat(animSpeed, moveControl.magnitude);
+            Debug.Log(moveControl.magnitude);
         }
 
 

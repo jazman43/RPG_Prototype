@@ -20,7 +20,7 @@ namespace RPG.UI
 
         private void Start()
         {
-            PlayerConversant playerConversant = FindObjectOfType<PlayerConversant>();
+            PlayerConversant playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             playerConversant.SetPlayerName(newGameNameField.text);
         }
         private SavingWrapper GetSavingWrapper()

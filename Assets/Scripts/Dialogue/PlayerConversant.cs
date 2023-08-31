@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using Jareds.Utils;
 using RPG.Saving;
+using RPG.core;
+
 
 namespace RPG.Dialogue
 {
@@ -15,9 +17,17 @@ namespace RPG.Dialogue
         Dialogue currentDialogue;
         DialogueNode currentNode = null;
         AIConversant currentConversant = null;
+        EnableDisableCamMovment camMovment;
+
         bool isChoosing = false;
 
         public event Action onConversationUpdated;
+
+        private void Awake()
+        {
+            camMovment = GameObject.FindGameObjectWithTag("Core").GetComponent<EnableDisableCamMovment>();
+        }
+
 
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
@@ -28,6 +38,10 @@ namespace RPG.Dialogue
                 currentNode = currentDialogue.GetRootNode();
                 TriggerEnterAction();
                 onConversationUpdated?.Invoke();
+
+                //unlock cursor
+                Cursor.lockState = CursorLockMode.Confined;
+                camMovment.EnableDisable();
             }
             
         }
@@ -39,7 +53,10 @@ namespace RPG.Dialogue
             currentNode = null;
             isChoosing = false;
             currentConversant = null;
+
             Cursor.lockState = CursorLockMode.Locked;
+            camMovment.EnableDisable();
+
             onConversationUpdated();
         }
 
