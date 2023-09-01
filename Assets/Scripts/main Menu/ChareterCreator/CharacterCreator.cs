@@ -60,9 +60,11 @@ namespace RPG.MainMenu.ChareterCreator
 
         private bool isLoaded = false;
 
+        //need to be static so it alive between scenes 
         private static bool hasLoaded = false;
 
         private Color hairColor;
+        private int skinColorIndex = -1;
 
         #region Init and Helpers
         // Start is called before the first frame update
@@ -71,9 +73,10 @@ namespace RPG.MainMenu.ChareterCreator
             if (!isLoaded && !hasLoaded)
             {
                 InitBody();
-                Debug.Log(isLoaded);
+                //Debug.Log(isLoaded);
             }
-            Debug.Log(hasLoaded);
+            //Debug.Log(hasLoaded);
+            //for loading a new game character
             if (hasLoaded)
             {
                 String genderString = PlayerPrefs.GetString("gender");
@@ -88,7 +91,7 @@ namespace RPG.MainMenu.ChareterCreator
                 EnableCharacter();
 
 
-                Debug.Log(PlayerPrefs.GetInt("head"));
+                //Debug.Log(PlayerPrefs.GetInt("head"));
                 if (genderString == Gender.Male.ToString())
                 {
                     SetGender("Gender (Male)");
@@ -133,7 +136,7 @@ namespace RPG.MainMenu.ChareterCreator
             maxParts = Enum.GetValues(typeof(BodyParts)).Length;
             equipped = new int[maxParts];
 
-            //silly C# sintax Gender the length of BodyParts Enum
+            //silly C# sintax Gender the length of BodyParts Enum [gender index, part index]
             allObjects = new List<GameObject>[2, maxParts];
 
             // rebuild all lists
@@ -222,7 +225,7 @@ namespace RPG.MainMenu.ChareterCreator
         }
 
         
-
+        //just in case
         Color ConvertColor(int r, int g, int b)
         {
             return new Color(r / 255.0f, g / 255.0f, b / 255.0f, 1);
@@ -392,7 +395,8 @@ namespace RPG.MainMenu.ChareterCreator
                     break;
                     
             }
-            PlayerPrefs.SetInt("SkinColour", i);
+            skinColorIndex = i;
+            PlayerPrefs.SetInt("SkinColor", i);
         }
 
 
@@ -608,6 +612,18 @@ namespace RPG.MainMenu.ChareterCreator
             data["eyebrows"] = equipped[(int)BodyParts.Eyebrow];
             data["hair"] = equipped[(int)BodyParts.All_Hair];
             data["facialhair"] = equipped[(int)BodyParts.FacialHair];
+
+            //save current colors 
+            float hairColorRed = hairColor.r;
+            float hairColorGreen = hairColor.g;
+            float hairColorBlue = hairColor.b;
+
+            data["hairColorRed"] = hairColorRed;
+            data["hairColorGreen"] = hairColorGreen;
+            data["hairColorBlue"] = hairColorBlue;
+
+            data["skinColor"] = skinColorIndex;
+
             Debug.Log(data);
             return data;
         }
@@ -642,6 +658,18 @@ namespace RPG.MainMenu.ChareterCreator
             ActivateItem((int)BodyParts.All_Hair, index);
             index = (int)data["facialhair"];
             ActivateItem((int)BodyParts.FacialHair, index);
+
+            //load colors
+
+            SetSliderSkinColor((int)data["skinColor"]);
+
+            float haircolorRed = (float)data["hairColorRed"];
+            float haircolorGreen = (float)data["hairColorGreen"];
+            float haircolorBlue = (float)data["hairColorBlue"];
+
+            Color color = new Color(haircolorRed,haircolorGreen,haircolorBlue);
+
+            SetHairColor("_Color_Hair", color);
         }
         #endregion
     }

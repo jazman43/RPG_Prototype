@@ -3,6 +3,8 @@ using UnityEngine;
 using RPG.Saving;
 using System.Collections.Generic;
 using Jareds.Utils;
+using RPG.Quests;
+
 
 namespace RPG.Inventories
 {
@@ -252,11 +254,11 @@ namespace RPG.Inventories
             }
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
+        public bool? Evaluate(QuestPredicateEnum questPredicate, string[] parameters)
         {
-            switch (predicate)
+            switch (questPredicate)
             {
-                case "HasInventoryItem":
+                case QuestPredicateEnum.HasInventoryItem:
                 return HasItem(InventoryItem.GetFromID(parameters[0]));
             }
 

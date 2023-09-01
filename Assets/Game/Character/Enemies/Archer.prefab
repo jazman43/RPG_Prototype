@@ -83,6 +83,12 @@ PrefabInstance:
       propertyPath: animSpeed
       value: forwardSpeed
       objectReference: {fileID: 0}
+    - target: {fileID: 5734687234848719809, guid: 25b8fd9519153de438aa44110f547412,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: e1e4e8bcafb19f04c8297735a06ab470,
+        type: 2}
     - target: {fileID: 6051246471102713882, guid: 25b8fd9519153de438aa44110f547412,
         type: 3}
       propertyPath: defaultWeapon

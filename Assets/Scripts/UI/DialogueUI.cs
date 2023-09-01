@@ -4,12 +4,14 @@ using UnityEngine;
 using RPG.Dialogue;
 using TMPro;
 using UnityEngine.UI;
+using RPG.core;
 
 namespace RPG.UI
 {
     public class DialogueUI : MonoBehaviour
     {
         PlayerConversant playerConversant;
+        EnableDisableCamMovment camMovment;
         [SerializeField] TextMeshProUGUI AIText;
         [SerializeField] Button nextButton;
         [SerializeField] GameObject AIResponse;
@@ -19,7 +21,10 @@ namespace RPG.UI
         [SerializeField] TextMeshProUGUI conversantName;
 
 
-        
+        private void Awake()
+        {
+            camMovment = GameObject.FindGameObjectWithTag("Core").GetComponent<EnableDisableCamMovment>();
+        }
 
         void Start()
         {
@@ -38,7 +43,8 @@ namespace RPG.UI
             {
                 return;
             }
-            Cursor.lockState = CursorLockMode.Confined;
+            
+
             conversantName.text = playerConversant.GetCurrentConversantName();
             AIResponse.SetActive(!playerConversant.IsChoosing());
             choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());

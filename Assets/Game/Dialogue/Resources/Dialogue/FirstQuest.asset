@@ -1,0 +1,602 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7153000527003288940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 1141e1c9-ff69-45cc-bfff-658c0262fe0c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: oh ok
+  children:
+  - 3963ab15-a38e-42cf-83cc-c96205a9fa0a
+  rect:
+    serializedVersion: 2
+    x: 1227
+    y: 492
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3000400670821701353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: f6a3a5d2-5c14-4588-961e-d91df7fe278e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok thank you
+  children:
+  - 3963ab15-a38e-42cf-83cc-c96205a9fa0a
+  rect:
+    serializedVersion: 2
+    x: 1133
+    y: 305
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1912289080050404644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: f2b4ccfe-0e29-48b6-bd86-5dc524a7d09b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Go buy a Sword from the BlackSmith
+  children:
+  - 0f9b054c-eca4-401e-9304-afbd17bc49f8
+  rect:
+    serializedVersion: 2
+    x: 1945
+    y: 485
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1673935093070468268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 72b6e2aa-5575-467d-8e41-84f52a5c764e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: ok bye!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2441
+    y: 487
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-638369522415384049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 374e1377-9a8f-431a-8c39-d1a933c112e0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: yes this is a dangers world
+  children:
+  - e0a24f1d-b27e-457b-8e59-228d2771da48
+  - 129d380a-4277-4579-b71a-d2723e2c4276
+  rect:
+    serializedVersion: 2
+    x: 757
+    y: 613
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Equip Your First Sword
+        negate: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20020754e2d077c45a6d80bb16361ff0, type: 3}
+  m_Name: FirstQuest
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 32195823767694467}
+  - {fileID: 3924856849074778647}
+  - {fileID: 8521184034996986550}
+  - {fileID: 8613661836220522169}
+  - {fileID: 2202411148239746982}
+  - {fileID: 9081036275157016768}
+  - {fileID: 8627245682135635160}
+  - {fileID: 5662895744879573396}
+  - {fileID: 2612533153623912227}
+  - {fileID: -1673935093070468268}
+  - {fileID: 4062332513708148993}
+  - {fileID: 8313373770332453909}
+  - {fileID: -638369522415384049}
+  - {fileID: 1077850964528951196}
+  - {fileID: 9086976435659459249}
+  - {fileID: 2928796956126457679}
+  - {fileID: -1912289080050404644}
+  - {fileID: 5105527526047590422}
+  - {fileID: 723644655146645017}
+  - {fileID: -7153000527003288940}
+  - {fileID: -3000400670821701353}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &32195823767694467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 3963ab15-a38e-42cf-83cc-c96205a9fa0a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good morning good to see you awake
+  children:
+  - 95b54141-6939-4168-9c2c-85966f4b743f
+  - 6cb74d5d-ecf5-4c03-811e-fda40b444e95
+  rect:
+    serializedVersion: 2
+    x: 37
+    y: 256
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &723644655146645017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 0f9b054c-eca4-401e-9304-afbd17bc49f8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 'ok thank you im off now '
+  children:
+  - 72b6e2aa-5575-467d-8e41-84f52a5c764e
+  rect:
+    serializedVersion: 2
+    x: 2195
+    y: 484
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1077850964528951196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: a07b14a9-cf55-41ff-a380-5d36d3010882
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: you can buy a sword from the blacksmith
+  children:
+  - f6a3a5d2-5c14-4588-961e-d91df7fe278e
+  rect:
+    serializedVersion: 2
+    x: 888
+    y: 200
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Equip Your First Sword
+        negate: 0
+--- !u!114 &2202411148239746982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 880f9701-2bd2-422b-a4db-a80a56d36d7a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: '''F'' to pick up items or talk to someone'
+  children:
+  - 44788a10-aaf4-44d2-b80d-7be55b27e62d
+  rect:
+    serializedVersion: 2
+    x: 1130
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2612533153623912227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 71124845-b26a-4da9-8e5a-92f34ad30939
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: is there anything else?
+  children:
+  - 95b54141-6939-4168-9c2c-85966f4b743f
+  - 6cb74d5d-ecf5-4c03-811e-fda40b444e95
+  rect:
+    serializedVersion: 2
+    x: 501
+    y: 184
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2928796956126457679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 129d380a-4277-4579-b71a-d2723e2c4276
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: its not that bad ill be fine
+  children:
+  - b29e7980-f9bf-4eac-bf8d-f742eab03f7c
+  rect:
+    serializedVersion: 2
+    x: 1211
+    y: 680
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3924856849074778647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 95b54141-6939-4168-9c2c-85966f4b743f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: hey how do you play?
+  children:
+  - 0ed6ff5f-bd1a-4ddd-96dc-04b71afa8024
+  rect:
+    serializedVersion: 2
+    x: 351
+    y: 25
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4062332513708148993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 6cb74d5d-ecf5-4c03-811e-fda40b444e95
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: do you have anything for me?
+  children:
+  - 927ef073-7a31-460b-923a-aa2e2596512c
+  - 374e1377-9a8f-431a-8c39-d1a933c112e0
+  - a07b14a9-cf55-41ff-a380-5d36d3010882
+  rect:
+    serializedVersion: 2
+    x: 384
+    y: 467
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5105527526047590422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: b29e7980-f9bf-4eac-bf8d-f742eab03f7c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: theres been a lot of moster and banit attacks almost every day now!!
+  children:
+  - e0a24f1d-b27e-457b-8e59-228d2771da48
+  rect:
+    serializedVersion: 2
+    x: 1433
+    y: 682
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5662895744879573396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: ee27d47c-47ce-41b7-8686-b6f8535ecc39
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: '''i'' or ''Esc'' for pause menu '
+  children:
+  - 71124845-b26a-4da9-8e5a-92f34ad30939
+  rect:
+    serializedVersion: 2
+    x: 1880
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8313373770332453909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 927ef073-7a31-460b-923a-aa2e2596512c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: no sorry
+  children:
+  - 1141e1c9-ff69-45cc-bfff-658c0262fe0c
+  rect:
+    serializedVersion: 2
+    x: 896
+    y: 368
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Equip Your First Sword
+        negate: 0
+--- !u!114 &8521184034996986550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 0ed6ff5f-bd1a-4ddd-96dc-04b71afa8024
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: well one you can use 'W' to move forward
+  children:
+  - d197b8a2-2043-47d8-92a2-ecc24220a078
+  rect:
+    serializedVersion: 2
+    x: 601
+    y: 25
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8613661836220522169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: d197b8a2-2043-47d8-92a2-ecc24220a078
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: '''S'' to move back ''A'' to move left and ''D'' to go right'
+  children:
+  - 880f9701-2bd2-422b-a4db-a80a56d36d7a
+  rect:
+    serializedVersion: 2
+    x: 848
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8627245682135635160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 0d807177-55db-4d78-8230-81a040e91bb5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: key '1 to 4' for abilite actions
+  children:
+  - ee27d47c-47ce-41b7-8686-b6f8535ecc39
+  rect:
+    serializedVersion: 2
+    x: 1630
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &9081036275157016768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 44788a10-aaf4-44d2-b80d-7be55b27e62d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: when close to enemy left click to attack with eqiuped weapon
+  children:
+  - 0d807177-55db-4d78-8230-81a040e91bb5
+  rect:
+    serializedVersion: 2
+    x: 1380
+    y: 28
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &9086976435659459249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: e0a24f1d-b27e-457b-8e59-228d2771da48
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: oh what should i do?
+  children:
+  - f2b4ccfe-0e29-48b6-bd86-5dc524a7d09b
+  rect:
+    serializedVersion: 2
+    x: 1653
+    y: 596
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+  condition:
+    and: []

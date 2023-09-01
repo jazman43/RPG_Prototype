@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using Jareds.Utils;
+using RPG.Quests;
+
 
 namespace RPG.Inventories
 {
     
-    public class ActionStore : MonoBehaviour, ISaveable
+    public class ActionStore : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         
         Dictionary<int, DockedItemSlot> dockedItems = new Dictionary<int, DockedItemSlot>();
@@ -146,6 +149,22 @@ namespace RPG.Inventories
             {
                 AddAction(InventoryItem.GetFromID(pair.Value.itemID), pair.Key, pair.Value.number);
             }
+        }
+
+        public bool? Evaluate(QuestPredicateEnum questPredicate, string[] parameters)
+        {
+            if (questPredicate == QuestPredicateEnum.HasActionEquiped)
+            {
+                foreach (var item in dockedItems)
+                {
+                    if (item.Value.item.GetItemID() == parameters[0])
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return null;
         }
     }
 }

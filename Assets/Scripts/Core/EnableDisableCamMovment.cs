@@ -13,14 +13,16 @@ namespace RPG.core
 
 
 
-        public void EnableDisable()
+        public bool EnableDisable()
         {
-            Debug.Log(thirdPersonCam.activeSelf);
+            Debug.Log(thirdPersonCam.activeSelf + " cam current stats");
 
             if (thirdPersonCam != null)
             {
                 thirdPersonCam.SetActive(!thirdPersonCam.activeSelf);
+                return thirdPersonCam.activeSelf;
             }
+            return false;
         }
     }
 

@@ -37,11 +37,14 @@ namespace RPG.Dialogue
                 currentDialogue = newDialogue;
                 currentNode = currentDialogue.GetRootNode();
                 TriggerEnterAction();
-                onConversationUpdated?.Invoke();
-
+                Debug.Log("convo Start" + camMovment);
                 //unlock cursor
                 Cursor.lockState = CursorLockMode.Confined;
-                camMovment.EnableDisable();
+                if (camMovment.EnableDisable()) { camMovment.EnableDisable(); }
+
+                onConversationUpdated?.Invoke();
+
+                
             }
             
         }

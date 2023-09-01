@@ -4145,6 +4145,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 715186905639442393, guid: 5a183825b1dd5f7458a0d2d0edb58c57,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 4703672163289890605, guid: 5a183825b1dd5f7458a0d2d0edb58c57,
         type: 3}
       propertyPath: m_RootOrder

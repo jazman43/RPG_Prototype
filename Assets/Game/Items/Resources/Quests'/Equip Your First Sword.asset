@@ -19,12 +19,14 @@ MonoBehaviour:
     completionCondition:
       and:
       - or:
-        - predicate: HasItemEquiped
+        - predicate: 1
           parameters:
           - f5f145bd-6f07-41e1-b421-0a5c94e1a652
           negate: 0
   rewards:
   - number: 10
     item: {fileID: 11400000, guid: 146acdebb62283b458445169e047d97e, type: 2}
-  - number: 222
+  - number: 300
     item: {fileID: 11400000, guid: 1aeea35ce2f472d42a12bf91612462db, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: 3d9367f0076dbae4d8175b1247966862, type: 2}

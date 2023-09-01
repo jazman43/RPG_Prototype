@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using RPG.Saving;
 using Jareds.Utils;
 using UnityEngine;
+using RPG.Quests;
+
 
 namespace RPG.Progression
 {
@@ -137,9 +139,9 @@ namespace RPG.Progression
             assignedPoints = new Dictionary<Trait, int>((IDictionary<Trait, int>)state);
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
+        public bool? Evaluate(QuestPredicateEnum questPredicate, string[] parameters)
         {
-            if (predicate == "MinimumTrait")
+            if (questPredicate == QuestPredicateEnum.MinimumTrait)
             {
                 if (Enum.TryParse<Trait>(parameters[0], out Trait trait))
                 {

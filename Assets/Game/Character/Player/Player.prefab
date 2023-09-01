@@ -81,34 +81,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5482075857736517428}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8703c52e5ecd2124a8813853e0f6e0a9, type: 3}
---- !u!1 &3392578257536452417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3125062346269887407, guid: 8703c52e5ecd2124a8813853e0f6e0a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 309244615296355566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5482075857736517428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3392578257536452417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24270d913f45484db99b8186cd8f691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeInTime: 0.2
-  fadeOutTime: 0.2
-  firstLevelBuildIndex: 1
-  menuLevelBuildIndex: 0
 --- !u!4 &6713703861442931241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6440558966061164231, guid: 8703c52e5ecd2124a8813853e0f6e0a9,

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
 using Jareds.Utils;
+using RPG.Quests;
+
 
 namespace RPG.Inventories
 {
@@ -85,9 +87,10 @@ namespace RPG.Inventories
             equipmentUpdated?.Invoke();
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
+        public bool? Evaluate(QuestPredicateEnum questPredicate, string[] parameters)
         {
-            if (predicate == "HasItemEquiped")
+            //HasItemEquiped need to be a enum will change one day
+            if (questPredicate == QuestPredicateEnum.HasItemEquiped)
             {
                 foreach (var item in equippedItems.Values)
                 {

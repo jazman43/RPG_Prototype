@@ -1,0 +1,425 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7060818365482399594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 07759bf9-8eb3-4e47-9268-ace64e92e4bb
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok will done bye
+  children:
+  - d29476fd-a788-4a95-9234-a080c06f29d7
+  rect:
+    serializedVersion: 2
+    x: 1846
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-6418172589318590374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: a5712c41-f92c-45ff-b739-a3cfa14632f4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: What!! hell no ill sooner attack a chickin!!
+  children:
+  - c7fba1da-bcd1-4d92-9b6b-756a093b9209
+  rect:
+    serializedVersion: 2
+    x: 1096
+    y: 118
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5649129196011162392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: eb9f7bd2-3e51-4adf-bade-4f51c3a20673
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: war is coming
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 338
+    y: 280
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-4532464428285571237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: c7fba1da-bcd1-4d92-9b6b-756a093b9209
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh ok bye then
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1329
+    y: 271
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3778872226339507433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: d29476fd-a788-4a95-9234-a080c06f29d7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: thank you and bye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2096
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1421520398184364739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 34f5702a-f1b6-4e85-8480-bead5e402437
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'yay thank you kind sir! '
+  children:
+  - 31368991-f651-40bc-a8b5-9adb6a1fb5e2
+  rect:
+    serializedVersion: 2
+    x: 1346
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1091393200359353633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 7072fba2-c76a-4560-9a17-8479867d9dfe
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: yes sir what do you need?
+  children:
+  - 4e5ba711-fd69-48d9-a3a6-58f00701e1b5
+  rect:
+    serializedVersion: 2
+    x: 597
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-668173468194375114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: d10eb826-32df-462d-aaf5-b3b7675cf8c6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 'ok im on it just dont send the chickins i dont want to die '
+  children:
+  - 34f5702a-f1b6-4e85-8480-bead5e402437
+  rect:
+    serializedVersion: 2
+    x: 1097
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20020754e2d077c45a6d80bb16361ff0, type: 3}
+  m_Name: MainQuestBanditsToKill
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 3461768193924727164}
+  - {fileID: 4705485627796132141}
+  - {fileID: 7113130892000793266}
+  - {fileID: -5649129196011162392}
+  - {fileID: -1091393200359353633}
+  - {fileID: 1010557904607521359}
+  - {fileID: 5167852641352245131}
+  - {fileID: 5889770374064602627}
+  - {fileID: -668173468194375114}
+  - {fileID: -6418172589318590374}
+  - {fileID: -4532464428285571237}
+  - {fileID: -1421520398184364739}
+  - {fileID: 1558741583428608734}
+  - {fileID: -7060818365482399594}
+  - {fileID: -3778872226339507433}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1010557904607521359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 3541e65e-e966-4350-8ac3-761064ffc001
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: no bye
+  children:
+  - 4700d458-b38b-461d-b9f7-5b15878856fe
+  rect:
+    serializedVersion: 2
+    x: 599
+    y: 241
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1558741583428608734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 31368991-f651-40bc-a8b5-9adb6a1fb5e2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'migt i suggest you get the area spell from the shops before you leave '
+  children:
+  - 07759bf9-8eb3-4e47-9268-ace64e92e4bb
+  rect:
+    serializedVersion: 2
+    x: 1596
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3461768193924727164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 115fa4fa-3fc9-4416-8db6-c9b584c31897
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good morning!
+  children:
+  - e23544f0-e89d-426e-b558-4c1882953d40
+  - 59bed3a5-9098-47d8-88ee-40b94a85df5f
+  - eb9f7bd2-3e51-4adf-bade-4f51c3a20673
+  rect:
+    serializedVersion: 2
+    x: 74
+    y: 153
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4705485627796132141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: e23544f0-e89d-426e-b558-4c1882953d40
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: young man do you think you could help us?
+  children:
+  - 7072fba2-c76a-4560-9a17-8479867d9dfe
+  - 3541e65e-e966-4350-8ac3-761064ffc001
+  rect:
+    serializedVersion: 2
+    x: 329
+    y: 65
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - To The Bandit Camp
+        negate: 1
+--- !u!114 &5167852641352245131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 4700d458-b38b-461d-b9f7-5b15878856fe
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: bye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 848
+    y: 333
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5889770374064602627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 4e5ba711-fd69-48d9-a3a6-58f00701e1b5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: there's a bandit camp on the other side of the island can you stop them?
+  children:
+  - d10eb826-32df-462d-aaf5-b3b7675cf8c6
+  - a5712c41-f92c-45ff-b739-a3cfa14632f4
+  rect:
+    serializedVersion: 2
+    x: 847
+    y: 20
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7113130892000793266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 59bed3a5-9098-47d8-88ee-40b94a85df5f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: what i fine day here
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 351
+    y: 165
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

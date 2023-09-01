@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Quests;
+
 
 namespace Jareds.Utils
 {
@@ -45,7 +47,7 @@ namespace Jareds.Utils
         class Predicate
         {
             [SerializeField]
-            string predicate;
+            QuestPredicateEnum predicate;
             [SerializeField]
             string[] parameters;
             [SerializeField]
