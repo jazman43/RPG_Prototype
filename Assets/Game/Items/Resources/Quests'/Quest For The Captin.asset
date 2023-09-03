@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307d87d27f907ab409224ea823bb2f13, type: 3}
+  m_Name: Quest For The Captin
+  m_EditorClassIdentifier: 
+  objectives:
+  - reference: potion
+    description: Bye Your First Heath Potion
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: 5
+          parameters:
+          - ac1ebfce-ba1b-40d9-891a-6175d3c3b996
+          negate: 0
+  - reference: Enemy
+    description: Defeat the Captin Skeleton
+    usesCondition: 0
+    completionCondition:
+      and: []
+  rewards:
+  - number: 300
+    item: {fileID: 11400000, guid: 1aeea35ce2f472d42a12bf91612462db, type: 2}
+  - number: 3
+    item: {fileID: 11400000, guid: 3d9367f0076dbae4d8175b1247966862, type: 2}
+  - number: 10
+    item: {fileID: 11400000, guid: 146acdebb62283b458445169e047d97e, type: 2}

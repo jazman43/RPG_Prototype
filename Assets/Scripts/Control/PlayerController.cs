@@ -2,14 +2,11 @@
 using UnityEngine;
 using RPG.Inputs;
 using RPG.Movement;
-using RPG.Combat;
 using RPG.Attributes;
 using System;
 using UnityEngine.EventSystems;
-using UnityEngine.AI;
-using System.Collections.Generic;
 using RPG.Inventories;
-using RPG.UI.InteractableUI;
+
 
 
 
@@ -34,7 +31,7 @@ namespace RPG.Control
 
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float raycastRadius = 1f;
-        [SerializeField] float maxNavMeshProjectionDistance = 1f;
+        
 
 
         

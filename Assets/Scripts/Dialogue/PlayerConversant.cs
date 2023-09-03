@@ -110,6 +110,7 @@ namespace RPG.Dialogue
     
         public void Next()
         {
+            Debug.Log("Next");
             int numPlayerResponses = FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode)).Count();
             if (numPlayerResponses > 0)
             {

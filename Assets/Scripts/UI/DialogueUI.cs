@@ -30,10 +30,18 @@ namespace RPG.UI
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             playerConversant.onConversationUpdated += UpdateUI;
+
+            Debug.Log(nextButton);
             nextButton.onClick.AddListener(() => playerConversant.Next());
+            nextButton.onClick.AddListener(() => { Debug.Log(nextButton + " Start"); });
             quitButton.onClick.AddListener(() => playerConversant.Quit());
 
             UpdateUI();
+        }
+
+        private void Update()
+        {
+            
         }
 
         void UpdateUI()
@@ -43,7 +51,7 @@ namespace RPG.UI
             {
                 return;
             }
-            
+           
 
             conversantName.text = playerConversant.GetCurrentConversantName();
             AIResponse.SetActive(!playerConversant.IsChoosing());

@@ -76,7 +76,12 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - To The Bandit Camp
+        negate: 0
 --- !u!114 &-4532464428285571237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +338,7 @@ MonoBehaviour:
   - 3541e65e-e966-4350-8ac3-761064ffc001
   rect:
     serializedVersion: 2
-    x: 329
+    x: 328
     y: 65
     width: 200
     height: 100
@@ -415,11 +420,16 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 351
+    x: 350
     y: 165
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - To The Bandit Camp
+        negate: 0

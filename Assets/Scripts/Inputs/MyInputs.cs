@@ -244,6 +244,17 @@ namespace RPG.Inputs
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0e082559-73ca-43da-a202-e8af23338931"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard & mouse"",
+                    ""action"": ""ShowUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""3861a4fe-8cef-48ba-a82b-97d7211cc80f"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",

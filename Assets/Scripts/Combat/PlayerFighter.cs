@@ -8,6 +8,8 @@ using Jareds.Utils;
 using RPG.Inventories;
 using RPG.Progression;
 using RPG.Inputs;
+using RPG.Dialogue;
+using RPG.Shops;
 
 namespace RPG.Combat
 {
@@ -74,6 +76,7 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
 
+            if (combatTarget.GetComponent<DialogueTrigger>() != null) return;
 
             if (GetComponent<InputActions>().CharacterBasicAttack())
             {

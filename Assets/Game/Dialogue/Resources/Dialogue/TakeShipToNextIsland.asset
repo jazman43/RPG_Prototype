@@ -1,0 +1,663 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8434857617743205793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: cb051346-cff7-4455-a82e-eb7cb7c8b063
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'sorry your not strong enough! '
+  children:
+  - 36159479-2494-43bb-b40f-2a8f543ffe1a
+  rect:
+    serializedVersion: 2
+    x: 650
+    y: 689
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 4
+        parameters:
+        - Strength
+        - 10
+        negate: 1
+--- !u!114 &-8227291472835484224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 3ae61696-0fe0-436d-85fd-93446d4aa9b2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Then theres a Skeleton up the beach you will need to defeat.
+  children:
+  - 34c031e0-3635-48bf-a85d-060aad6d12e4
+  - 8ebab5c4-103f-445e-94a5-265cd9b3b2e7
+  rect:
+    serializedVersion: 2
+    x: 1484
+    y: 758
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-8192056081298387180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: e138b2b4-f508-460d-9ffd-ba277cdba7c2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Is there anything i can do i'm a little broke right now?
+  children:
+  - cfe7abda-9b8e-4ec4-98b2-4e5bbcae5878
+  - b61f6f3b-f88a-4efa-a107-cf40d3a6a761
+  rect:
+    serializedVersion: 2
+    x: 384
+    y: 1074
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-8099772509899269324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 6df760cd-2c83-4a02-9eb1-0b0289259a09
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Sorry Bye
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 307
+    y: 1439
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7577054599172321757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: b61f6f3b-f88a-4efa-a107-cf40d3a6a761
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: No sorry
+  children:
+  - 0f9b26c8-28a5-4daa-b43b-acfdc3596850
+  rect:
+    serializedVersion: 2
+    x: 697
+    y: 1175
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Quest For The Captin
+        negate: 0
+--- !u!114 &-5664143053037583624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: de1692f5-4677-4dca-9a02-70ded7bedfe8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok yay can we leave now?
+  children:
+  - 00dadf6a-7f3f-4d3b-8138-3f9ad8453111
+  rect:
+    serializedVersion: 2
+    x: 894
+    y: 360
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5623224380144905095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: efea8d7e-a0a9-42d3-ab54-7719f1b6e0b2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: im not ready to go yet
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 899
+    y: 495
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3238726029494768847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 21f91761-9dde-4fd2-a041-fabe167f2dc5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'First you would need some health potions you can buy them in the market. '
+  children:
+  - 3ae61696-0fe0-436d-85fd-93446d4aa9b2
+  rect:
+    serializedVersion: 2
+    x: 1235
+    y: 758
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3192852075115063770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 19db9010-e16c-4859-be65-8970d1ddc946
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: i dont care about your problems
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 988
+    y: 1027
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3131897136730541915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 0f9b26c8-28a5-4daa-b43b-acfdc3596850
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok bye
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 995
+    y: 1174
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1521596755851193014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 488d00a2-fdfe-4c3a-a0ed-d6b8af874da7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Hey can this ship take me to "THE NEXT ISLAND" ?
+  children:
+  - ccd037c5-cff7-4fdf-a009-e03f49937437
+  - cb051346-cff7-4455-a82e-eb7cb7c8b063
+  rect:
+    serializedVersion: 2
+    x: 348
+    y: 556
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-886661219034346908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 34c031e0-3635-48bf-a85d-060aad6d12e4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok leave it to me!
+  children:
+  - 75e9106d-a293-4cae-937e-bfd460e28e0e
+  rect:
+    serializedVersion: 2
+    x: 1734
+    y: 722
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: QuestGiver
+  condition:
+    and: []
+--- !u!114 &-520863614802406793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good bye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2015
+    y: 912
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-493293493858274265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 32997f26-c460-44f1-a65f-49b8e4faadf8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ok thank you im of to train up!
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 1490
+    y: 635
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20020754e2d077c45a6d80bb16361ff0, type: 3}
+  m_Name: TakeShipToNextIsland
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 5618523445735111794}
+  - {fileID: -1521596755851193014}
+  - {fileID: -8192056081298387180}
+  - {fileID: -8099772509899269324}
+  - {fileID: -520863614802406793}
+  - {fileID: 7386805039049567278}
+  - {fileID: -7577054599172321757}
+  - {fileID: -3131897136730541915}
+  - {fileID: 1185373983022290057}
+  - {fileID: -8434857617743205793}
+  - {fileID: -5664143053037583624}
+  - {fileID: -5623224380144905095}
+  - {fileID: 56588717610589207}
+  - {fileID: 1138078621262958352}
+  - {fileID: 8567283442797482035}
+  - {fileID: -493293493858274265}
+  - {fileID: 5091159499450154669}
+  - {fileID: -3192852075115063770}
+  - {fileID: -3238726029494768847}
+  - {fileID: -8227291472835484224}
+  - {fileID: -886661219034346908}
+  - {fileID: 1295175293061273553}
+  - {fileID: 7379110540439939233}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &56588717610589207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 00dadf6a-7f3f-4d3b-8138-3f9ad8453111
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: yes lets go!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1145
+    y: 360
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Portal
+  condition:
+    and: []
+--- !u!114 &1138078621262958352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 36159479-2494-43bb-b40f-2a8f543ffe1a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: what do i need?
+  children:
+  - 7ee72db2-96e7-42b9-9a1d-5c8d6fffb335
+  rect:
+    serializedVersion: 2
+    x: 956
+    y: 630
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1185373983022290057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: ccd037c5-cff7-4fdf-a009-e03f49937437
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Yes for we can
+  children:
+  - de1692f5-4677-4dca-9a02-70ded7bedfe8
+  - efea8d7e-a0a9-42d3-ab54-7719f1b6e0b2
+  rect:
+    serializedVersion: 2
+    x: 639
+    y: 426
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 4
+        parameters:
+        - Strength
+        - 10
+        negate: 0
+--- !u!114 &1295175293061273553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 8ebab5c4-103f-445e-94a5-265cd9b3b2e7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: On second thourght naa
+  children:
+  - 820ea741-4b5f-4710-a2b1-4008d5fe04cd
+  rect:
+    serializedVersion: 2
+    x: 1731
+    y: 861
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5091159499450154669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 413ed658-285f-40b0-8330-ec83f7f6a9a7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: what can i do to help?
+  children:
+  - 21f91761-9dde-4fd2-a041-fabe167f2dc5
+  rect:
+    serializedVersion: 2
+    x: 967
+    y: 768
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5618523445735111794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 544e3dfb-9b7e-4e48-a9a9-e2b5e2d2bd48
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good'day to you!
+  children:
+  - 488d00a2-fdfe-4c3a-a0ed-d6b8af874da7
+  - e138b2b4-f508-460d-9ffd-ba277cdba7c2
+  - 6df760cd-2c83-4a02-9eb1-0b0289259a09
+  rect:
+    serializedVersion: 2
+    x: 34
+    y: 704
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7379110540439939233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 75e9106d-a293-4cae-937e-bfd460e28e0e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: thank you!!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1984
+    y: 722
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7386805039049567278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: cfe7abda-9b8e-4ec4-98b2-4e5bbcae5878
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Yes here is!
+  children:
+  - 413ed658-285f-40b0-8330-ec83f7f6a9a7
+  - 19db9010-e16c-4859-be65-8970d1ddc946
+  rect:
+    serializedVersion: 2
+    x: 689
+    y: 919
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Quest For The Captin
+        negate: 1
+--- !u!114 &8567283442797482035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 7ee72db2-96e7-42b9-9a1d-5c8d6fffb335
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Level 10 Strength you can give points in the paues menu
+  children:
+  - 32997f26-c460-44f1-a65f-49b8e4faadf8
+  rect:
+    serializedVersion: 2
+    x: 1240
+    y: 635
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

@@ -53,27 +53,22 @@ namespace RPG.Control
             return transform.position;
         }
 
-        private void Start()
-        {
-           
-        }
-
+       
         private void Update()
         {
             if (health.IsDead())
             {
                 return;
             }
-            //just for npc we might want a debug log here in case we accidantly forget the fighter on an enemy
-            if (fighter == null) return;
             
-            if (IsAggrevated() && fighter.CanAttack(player))
+            
+            if (IsAggrevated() && fighter.CanAttack(player) && fighter != null)
             {
                 
                 AttackPlayer();
                 //agent.speed = 3.5f;
             }
-            else if (timeSinceLastSawPlayer < supicionTime)
+            else if (timeSinceLastSawPlayer < supicionTime && fighter != null)
             {
                 GetComponent<ActionScheduler>().CancelCurrentAction();
             }

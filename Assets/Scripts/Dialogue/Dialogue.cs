@@ -16,6 +16,11 @@ namespace RPG.Dialogue
 
         Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
+        private void Awake()
+        {
+            OnValidate();
+        }
+
         private void OnValidate() {
             nodeLookup.Clear();
             foreach (DialogueNode node in GetAllNodes())

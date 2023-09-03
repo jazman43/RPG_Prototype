@@ -18,7 +18,7 @@ namespace RPG.Movement
         [Header("Animation")]
         [SerializeField] private string animSpeed = "forwardSpeed";
 
-        private NavMeshAgent playerControler;
+        private NavMeshAgent aiAgent;
 
         private Health health;
 
@@ -29,7 +29,7 @@ namespace RPG.Movement
         private void Awake()
         {
             animator = GetComponent<Animator>();
-            playerControler = GetComponent<NavMeshAgent>();
+            aiAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
         }
 
@@ -60,15 +60,15 @@ namespace RPG.Movement
 
         public void MoveTo(Vector3 destiation, float speed)
         {
-            playerControler.SetDestination(destiation);
-            playerControler.speed = maxSpeed * Mathf.Clamp01(speed);
-            playerControler.isStopped = false;
+            aiAgent.SetDestination(destiation);
+            aiAgent.speed = maxSpeed * Mathf.Clamp01(speed);
+            aiAgent.isStopped = false;
         }
 
 
         private void UpDateAnimator()
         {
-            Vector3 velocity = playerControler.velocity;
+            Vector3 velocity = aiAgent.velocity;
             Vector3 localVel = transform.InverseTransformDirection(velocity);
 
             float speed = localVel.z;
@@ -78,7 +78,7 @@ namespace RPG.Movement
 
         public void Cancel()
         {
-            playerControler.isStopped = true;
+            aiAgent.isStopped = true;
         }
 
         private float GetPathLength(NavMeshPath path)
